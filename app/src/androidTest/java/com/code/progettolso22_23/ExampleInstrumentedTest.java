@@ -1,4 +1,4 @@
-package com.example.progettolso22_23;
+package com.code.progettolso22_23;
 
 import android.content.Context;
 
