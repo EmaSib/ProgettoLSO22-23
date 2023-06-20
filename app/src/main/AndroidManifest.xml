@@ -36,5 +36,9 @@
 
     </activity>
 
+        <activity android:name="com.code.progettolso22_23.gui.HomePage">
+
+        </activity>
+
     </application>
 </manifest>
