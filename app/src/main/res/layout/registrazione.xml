@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+
+        <ImageButton
+            android:id="@+id/backButton2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="16dp"
+            android:background="#4CAF50"
+            android:contentDescription="@string/app_name"
+            android:minHeight="48dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="371dp"
+            android:layout_height="210dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="TODO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backButton2"
+            app:srcCompat="@drawable/get_drink_logos_transparent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="66dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:text="Username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <EditText
+            android:id="@+id/username_textfield"
+            android:layout_width="367dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="66dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <EditText
+            android:id="@+id/password_textfield"
+            android:layout_width="367dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="66dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Nome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numerotelefono_textfield" />
+
+        <EditText
+            android:id="@+id/nome_textfield"
+            android:layout_width="367dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="4dp"
+            android:text="Cognome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+
+        <EditText
+            android:id="@+id/cognome_textfield"
+            android:layout_width="367dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/registratiButtor"
+            android:layout_width="159dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="25dp"
+            android:contentDescription='""'
+            android:text="REGISTRATI"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+</ScrollView>
