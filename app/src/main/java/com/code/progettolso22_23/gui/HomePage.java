@@ -47,7 +47,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
         //toolbar = findViewById(R.id.toolbar_homepage);
         //setSupportActionBar(toolbar);
-
         //TODO
         //inizializzare la stringa username con l'username dell'utente
         drawerLayout = findViewById(R.id.drawer);
@@ -75,6 +74,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         frullati.setOnClickListener(this::onClick);
         ricerca = (Button) findViewById(R.id.ricerca_ingredientiButton);
         ricerca.setOnClickListener(this::onClick);
+
+        if(MainController.getConnectionType(this)==0) {
+            Toast.makeText(this, "Connessione assente, impossibile continuare", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
