@@ -1,4 +1,4 @@
-package com.code.progettolso22_23;
+package com.code.progettolso22_23.utils;
 
 import android.content.Intent;
 import android.os.Bundle;

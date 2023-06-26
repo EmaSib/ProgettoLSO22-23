@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="10"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/nome_pagina_bevanda_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textSize="10pt"
+        android:fontFamily="@font/abril_fatface" />
+
+    <ImageView
+        android:id="@+id/foto_pagina_bevanda_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/costo_pagina_bevanda_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textSize="10pt"
+        android:fontFamily="@font/abril_fatface" />
+
+    <TextView
+        android:id="@+id/ingredienti_pagina_bevanda_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="INGREDIENTI:"
+        android:textSize="10pt"
+        android:fontFamily="@font/abril_fatface" />
+
+    <ListView
+        android:id="@+id/lista_ingredienti_pagina_bevanda_list_view"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/descrizione_pagina_bevanda_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text=""
+        android:textSize="10pt"
+        android:fontFamily="@font/abril_fatface" />
+
+    <Button
+        android:id="@+id/torna_indietro_button_pagina_bevanda"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="TORNA INDIETRO" />
+
+    <Button
+        android:id="@+id/aggiungi_carrello_button_pagina_bevanda"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="AGGIUNGI AL CARRELLO" />
+
+</LinearLayout>

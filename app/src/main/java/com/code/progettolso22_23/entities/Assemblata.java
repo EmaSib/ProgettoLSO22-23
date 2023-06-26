@@ -6,6 +6,10 @@ public class Assemblata extends Bevanda{
     private List<String> Ingredienti;
     private String Descrizione;
 
+    public Assemblata() {
+
+    }
+
     public Assemblata(List<String> ingredienti, String descrizione) {
         Ingredienti = ingredienti;
         Descrizione = descrizione;

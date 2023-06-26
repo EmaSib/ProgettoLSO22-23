@@ -20,7 +20,7 @@
         android:supportsRtl="true"-->
 
     <activity
-        android:name="com.code.progettolso22_23.MainActivity"
+        android:name="com.code.progettolso22_23.utils.MainActivity"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

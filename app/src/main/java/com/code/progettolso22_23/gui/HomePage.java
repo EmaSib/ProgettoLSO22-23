@@ -1,6 +1,7 @@
 package com.code.progettolso22_23.gui;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,10 +46,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
+        mainController.setUser(getIntent().getStringExtra("USERNAME"));
+
         //toolbar = findViewById(R.id.toolbar_homepage);
         //setSupportActionBar(toolbar);
-        //TODO
-        //inizializzare la stringa username con l'username dell'utente
+
         drawerLayout = findViewById(R.id.drawer);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer );
         drawerLayout.addDrawerListener(drawerToggle);
@@ -60,7 +62,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         navView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
 
         ricercaDialog = new AlertDialog.Builder(this);
-        //inizializzaRicercaDialog(ricercaDialog);
 
         generiche = (Button) findViewById(R.id.genericheButton);
         generiche.setOnClickListener(this::onClick);
@@ -78,6 +79,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         if(MainController.getConnectionType(this)==0) {
             Toast.makeText(this, "Connessione assente, impossibile continuare", Toast.LENGTH_SHORT).show();
         }
+        mainController.inizializzaAllBevande();
+        Intent i = getIntent();
+        mainController.setUser(i.getStringExtra("USERNAME"));
 
     }
 
@@ -108,30 +112,37 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void onClick(View view) {
+        Intent apriPaginaListaBevande = new Intent();
         switch (view.getId()) {
             case R.id.genericheButton:
-                //TODO
-                //intent alla pagina generiche
+                apriPaginaListaBevande.putExtra("TIPO", "Generiche");
+                startActivity(apriPaginaListaBevande);
+                this.onPause();
                 break;
             case R.id.caffetteriaButton:
-                //TODO
-                //intent alla pagina caffetteria
+                apriPaginaListaBevande.putExtra("TIPO", "Caffetteria");
+                startActivity(apriPaginaListaBevande);
+                this.onPause();
                 break;
             case R.id.drinkButton:
-                //TODO
-                //intent alla pagina drink
+                apriPaginaListaBevande.putExtra("TIPO", "Drink");
+                startActivity(apriPaginaListaBevande);
+                this.onPause();
                 break;
             case R.id.drink_analcoliciButton:
-                //TODO
-                //intent alla pagina drink analcolici
+                apriPaginaListaBevande.putExtra("TIPO", "Drink analcolici");
+                startActivity(apriPaginaListaBevande);
+                this.onPause();
                 break;
             case R.id.frullatiButton:
-                //TODO
-                //intent alla pagina frullati
+                apriPaginaListaBevande.putExtra("TIPO", "Frullati");
+                startActivity(apriPaginaListaBevande);
+                this.onPause();
                 break;
             case R.id.ricerca_ingredientiButton:
                 inizializzaRicercaDialog(ricercaDialog);
                 ricercaDialog.show();
+                break;
         }
     }
 
@@ -176,8 +187,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 }
                 else {
                     dialogInterface.dismiss();
-                    //TODO
-                    //intent alla pagina delle bevande
+                    Intent apriPaginaListaBevande = new Intent();
+                    apriPaginaListaBevande.putExtra("TIPO", "Ricerca");
+                    startActivity(apriPaginaListaBevande);
                 }
             }
         });

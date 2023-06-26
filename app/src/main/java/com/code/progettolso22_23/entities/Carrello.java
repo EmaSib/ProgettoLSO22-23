@@ -1,5 +1,6 @@
 package com.code.progettolso22_23.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrello {
@@ -7,11 +8,13 @@ public class Carrello {
     private String Username;
     private List<Bevanda> ListaBevande;
     private float Totale;
+    private int[] Quantita;
 
     public Carrello(String username, List<Bevanda> listaBevande, float totale) {
         Username = username;
         ListaBevande = listaBevande;
         Totale = totale;
+        Quantita = new int[100];
     }
 
     public String getUsername() {
@@ -46,4 +49,11 @@ public class Carrello {
         this.getListaBevande().remove(b);
     }
 
+    public int[] getQuantita() {
+        return Quantita;
+    }
+
+    public void setQuantita(int[] quantita) {
+        Quantita = quantita;
+    }
 }
