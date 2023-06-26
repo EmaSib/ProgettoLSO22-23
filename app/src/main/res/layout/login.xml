@@ -68,6 +68,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="36dp"
         android:text="Password"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_textfield" />
 

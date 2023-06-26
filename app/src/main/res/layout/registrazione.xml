@@ -123,7 +123,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/registratiButtor"
+            android:id="@+id/registratiButton"
             android:layout_width="159dp"
             android:layout_height="55dp"
             android:layout_marginStart="130dp"
