@@ -25,6 +25,7 @@ public class ListaBevande extends AppCompatActivity {
     private MainController mainController = MainController.getIstance();
     private String BevandeDaMostrare;
     private List<Bevanda> bevande;
+    private List<Bevanda> consigliate;
 
     private ListView listViewBevande;
     private ListView listViewBevandeConsigliate;
@@ -38,6 +39,7 @@ public class ListaBevande extends AppCompatActivity {
         Intent i = getIntent();
         BevandeDaMostrare = i.getStringExtra("TIPO");
         bevande = mainController.restituisciBevandeDiUnTipo(BevandeDaMostrare);
+        consigliate = mainController.trovaConsigliatiDaLista(bevande);
 
         tornaIndietro = (Button) findViewById(R.id.torna_indietro_button_lista_bevande);
         tornaIndietro.setOnClickListener(this::onClick);
@@ -48,6 +50,8 @@ public class ListaBevande extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = (String)parent.getItemAtPosition(position);
                 String nome = value;
+                //TODO
+                //controllare se nome corrisponde a tutta la linea o solo al nome della bevanda
                 passaAPaginaBevanda(nome);
             }
         });
@@ -83,9 +87,11 @@ public class ListaBevande extends AppCompatActivity {
 
     private void updateListView() {
         if(bevande.get(0).getClass().equals(Assemblata.class)) {
-            listViewBevande.setAdapter(new ListViewAdapterBevandaAssemblata(this, getNomiBevandeComeArray(), getCostiBevandeComeArray(), getIngredientiBevandeComeArray()));
+            listViewBevande.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(bevande), mainController.getCostiBevandeComeArray(bevande), mainController.getIngredientiBevandeComeArray(bevande)));
+            listViewBevandeConsigliate.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(consigliate), mainController.getCostiBevandeComeArray(consigliate), mainController.getIngredientiBevandeComeArray(consigliate)));
         } else {
-            listViewBevande.setAdapter(new ListViewAdapterBevandaNormale(this, getNomiBevandeComeArray(), getCostiBevandeComeArray()));
+            listViewBevande.setAdapter(new ListViewAdapterBevandaNormale(this, mainController.getNomiBevandeComeArray(bevande), mainController.getCostiBevandeComeArray(bevande)));
+            listViewBevandeConsigliate.setAdapter(new ListViewAdapterBevandaNormale(this, mainController.getNomiBevandeComeArray(consigliate), mainController.getCostiBevandeComeArray(consigliate)));
         }
     }
 
@@ -95,43 +101,5 @@ public class ListaBevande extends AppCompatActivity {
         startActivity(apriPaginaBevanda);
         this.onPause();
     }
-
-    private String[] getNomiBevandeComeArray() {
-        String[] result = new String[bevande.size()];
-        int i=0;
-        for (Bevanda b : bevande) {
-            result[i] = b.getNome();
-            i++;
-        }
-        return result;
-    }
-
-    private String[] getCostiBevandeComeArray() {
-        String[] result = new String[bevande.size()];
-        int i=0;
-        for (Bevanda b : bevande) {
-            result[i] = String.valueOf(b.getCosto());
-            i++;
-        }
-        return result;
-    }
-
-    private String[] getIngredientiBevandeComeArray() {
-        String[] result = new String[bevande.size()];
-        int i=0;
-        for (Bevanda b : bevande) {
-            Assemblata a = (Assemblata) b;
-            String tmp="";
-            for (String s : a.getIngredienti()) {
-                tmp.concat(s);
-                tmp.concat(" - ");
-            }
-            result[i] = tmp;
-            i++;
-        }
-        return result;
-    }
-
-
 
 }

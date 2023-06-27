@@ -7,15 +7,17 @@ public class Bevanda {
     private String Tipo;
     private Bitmap Foto;
     private float Costo;
+    private int NumeroVendite;
 
     public Bevanda() {
     }
 
-    public Bevanda(String nome, String tipo, Bitmap foto, float costo) {
+    public Bevanda(String nome, String tipo, Bitmap foto, float costo, int numerovendite) {
         Nome = nome;
         Tipo = tipo;
         Foto = foto;
         Costo = costo;
+        NumeroVendite = numerovendite;
     }
 
     public String getNome() {
@@ -48,5 +50,13 @@ public class Bevanda {
 
     public void setCosto(float costo) {
         Costo = costo;
+    }
+
+    public int getNumeroVendite() {
+        return NumeroVendite;
+    }
+
+    public void setNumeroVendite(int numeroVendite) {
+        NumeroVendite = numeroVendite;
     }
 }

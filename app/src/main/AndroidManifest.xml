@@ -19,26 +19,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"-->
 
-    <activity
-        android:name="com.code.progettolso22_23.utils.MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name="com.code.progettolso22_23.utils.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
 
 
-        </intent-filter>
-    </activity>
+            </intent-filter>
+        </activity>
 
-    <activity
-        android:name="com.code.progettolso22_23.gui.Login">
+        <activity
+            android:name="com.code.progettolso22_23.gui.Login">
 
-    </activity>
+        </activity>
 
         <activity android:name="com.code.progettolso22_23.gui.HomePage">
 
         </activity>
 
+        <activity android:name=".gui.Registrazione">
+
+        </activity>
+
+        <activity android:name=".gui.ListaBevande">
+
+        </activity>
+
+        <activity android:name=".gui.PaginaBevanda">
+
+        </activity>
     </application>
 </manifest>

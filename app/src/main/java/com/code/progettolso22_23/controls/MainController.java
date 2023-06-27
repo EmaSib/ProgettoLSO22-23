@@ -6,10 +6,13 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
 
+import androidx.annotation.RequiresApi;
+
 import com.code.progettolso22_23.entities.Assemblata;
 import com.code.progettolso22_23.entities.Bevanda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -133,6 +136,74 @@ public class MainController {
         for (Bevanda b : this.getAllBevande())
             if(b.getNome().equals(nome))
                 result = b;
+        return result;
+    }
+
+
+    public ArrayList<Bevanda> trovaConsigliatiDaLista(List<Bevanda> lista) {
+        ArrayList<Bevanda> result = new ArrayList<>();
+        lista.sort(new Comparator<Bevanda>() {
+            @Override
+            public int compare(Bevanda bevanda, Bevanda t1) {
+                if(bevanda.getNumeroVendite() > t1.getNumeroVendite())
+                    return 1;
+                else if(bevanda.getNumeroVendite() == t1.getNumeroVendite())
+                    return 0;
+                else
+                    return -1;
+            }
+        });
+        int i=0;
+        if(lista.size() > 3) {
+            for (Bevanda b : lista) {
+                if (i < 3)
+                    result.add(b);
+                i++;
+            }
+        }
+        else {
+            for (Bevanda b : lista) {
+                if (i < 1)
+                    result.add(b);
+                i++;
+            }
+        }
+        return result;
+    }
+
+    public String[] getNomiBevandeComeArray(List<Bevanda> bevande) {
+        String[] result = new String[bevande.size()];
+        int i=0;
+        for (Bevanda b : bevande) {
+            result[i] = b.getNome();
+            i++;
+        }
+        return result;
+    }
+
+    public String[] getCostiBevandeComeArray(List<Bevanda> bevande) {
+        String[] result = new String[bevande.size()];
+        int i=0;
+        for (Bevanda b : bevande) {
+            result[i] = String.valueOf(b.getCosto());
+            i++;
+        }
+        return result;
+    }
+
+    public String[] getIngredientiBevandeComeArray(List<Bevanda> bevande) {
+        String[] result = new String[bevande.size()];
+        int i=0;
+        for (Bevanda b : bevande) {
+            Assemblata a = (Assemblata) b;
+            String tmp="";
+            for (String s : a.getIngredienti()) {
+                tmp.concat(s);
+                tmp.concat(" - ");
+            }
+            result[i] = tmp;
+            i++;
+        }
         return result;
     }
 
