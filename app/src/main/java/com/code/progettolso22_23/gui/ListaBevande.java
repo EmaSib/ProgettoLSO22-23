@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,7 @@ public class ListaBevande extends AppCompatActivity {
     private ListView listViewBevande;
     private ListView listViewBevandeConsigliate;
     private Button tornaIndietro;
+    private TextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +46,11 @@ public class ListaBevande extends AppCompatActivity {
 
         tornaIndietro = (Button) findViewById(R.id.torna_indietro_button_lista_bevande);
         tornaIndietro.setOnClickListener(this::onClick);
+        textView = (TextView) findViewById(R.id.text_view_lista_bevande);
+        if(BevandeDaMostrare.equals("Ricerca"))
+            textView.setText("Bevande trovate con gli ingredienti selezionati:");
+        else
+            textView.setText(BevandeDaMostrare);
 
         listViewBevande = (ListView) findViewById(R.id.list_view_lista_bevande);
         listViewBevande.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,7 +63,7 @@ public class ListaBevande extends AppCompatActivity {
                 passaAPaginaBevanda(nome);
             }
         });
-        listViewBevandeConsigliate = (ListView) findViewById(R.id.list_view_lista_bevande);
+        listViewBevandeConsigliate = (ListView) findViewById(R.id.list_view_consigliati_lista_bevande);
         listViewBevandeConsigliate.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -86,6 +94,11 @@ public class ListaBevande extends AppCompatActivity {
     }
 
     private void updateListView() {
+        if(bevande.size()==0) {
+            Toast.makeText(this, "Non ci sono bevande di questo tipo!", Toast.LENGTH_SHORT).show();
+            this.finish();
+            return;
+        }
         if(bevande.get(0).getClass().equals(Assemblata.class)) {
             listViewBevande.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(bevande), mainController.getCostiBevandeComeArray(bevande), mainController.getIngredientiBevandeComeArray(bevande)));
             listViewBevandeConsigliate.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(consigliate), mainController.getCostiBevandeComeArray(consigliate), mainController.getIngredientiBevandeComeArray(consigliate)));
@@ -96,7 +109,7 @@ public class ListaBevande extends AppCompatActivity {
     }
 
     private void passaAPaginaBevanda(String nome) {
-        Intent apriPaginaBevanda = new Intent(this, ListaBevande.class);
+        Intent apriPaginaBevanda = new Intent(this, PaginaBevanda.class);
         apriPaginaBevanda.putExtra("BEVANDA", nome);
         startActivity(apriPaginaBevanda);
         this.onPause();

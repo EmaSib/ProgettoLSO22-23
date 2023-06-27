@@ -55,7 +55,8 @@ public class Login extends AppCompatActivity {
                 if (succesLogIn) {
                     //TODO
                     //controllo presenza utente verso server
-                    //intent alla pagina HomePage
+                    Intent apriPaginaHomepage = new Intent(this, HomePage.class);
+                    startActivity(apriPaginaHomepage);
                     this.finish();
                 }
                 break;

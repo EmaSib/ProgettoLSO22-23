@@ -1,5 +1,7 @@
 package com.code.progettolso22_23.entities;
 
+import android.graphics.Bitmap;
+
 import java.util.List;
 
 public class Assemblata extends Bevanda{
@@ -11,6 +13,12 @@ public class Assemblata extends Bevanda{
     }
 
     public Assemblata(List<String> ingredienti, String descrizione) {
+        Ingredienti = ingredienti;
+        Descrizione = descrizione;
+    }
+
+    public Assemblata(String nome, String tipo, Bitmap foto, float costo, int numerovendite, List<String> ingredienti, String descrizione) {
+        super(nome, tipo, foto, costo, numerovendite);
         Ingredienti = ingredienti;
         Descrizione = descrizione;
     }

@@ -47,9 +47,9 @@ public class ListViewAdapterBevandaAssemblata extends BaseAdapter {
             vi = inflater.inflate(R.layout.list_view_row_bevanda_assemblata, null);
         TextView text = (TextView) vi.findViewById(R.id.nome_list_view_row_bevanda_assemblata);
         text.setText(nomi[i]);
-        TextView text2 = (TextView) vi.findViewById(R.id.costo_list_view_row_bevanda_normale);
+        TextView text2 = (TextView) vi.findViewById(R.id.costo_list_view_row_bevanda_assemblata);
         text2.setText(costi[i]);
-        TextView text3 = (TextView) vi.findViewById(R.id.costo_list_view_row_bevanda_normale);
+        TextView text3 = (TextView) vi.findViewById(R.id.costo_list_view_row_bevanda_assemblata);
         text3.setText(ingredienti[i]);
         return vi;
     }

@@ -50,7 +50,7 @@ public class PaginaBevanda extends AppCompatActivity {
         Nome.setText(NomeBevanda);
         Foto = (ImageView) findViewById(R.id.foto_pagina_bevanda_image_view);
         Foto.setImageBitmap(BevandaScelta.getFoto());
-        Costo = (TextView) findViewById(R.id.costo_list_view_row_bevanda_assemblata);
+        Costo = (TextView) findViewById(R.id.costo_pagina_bevanda_text_view);
         Costo.setText(String.valueOf(BevandaScelta.getCosto()));
         Ingredienti = (TextView) findViewById(R.id.ingredienti_pagina_bevanda_text_view);
         ListaIngredienti = (ListView) findViewById(R.id.lista_ingredienti_pagina_bevanda_list_view);
@@ -84,8 +84,8 @@ public class PaginaBevanda extends AppCompatActivity {
                 Toast.makeText(this, "Elemento aggiunto al carrello con successo!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.torna_indietro_button_pagina_bevanda:
-                Intent apriListaBevande = new Intent(this, ListaBevande.class);
-                startActivity(apriListaBevande);
+                //Intent apriListaBevande = new Intent(this, ListaBevande.class);
+                //startActivity(apriListaBevande);
                 this.finish();
                 break;
         }

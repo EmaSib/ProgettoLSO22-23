@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         //intent alla nuova pagina di benvenuto
-        Intent apriPrimaPagina = new Intent(this, Login.class);
+        Intent apriPrimaPagina = new Intent(this, HomePage.class);
         startActivity(apriPrimaPagina);
         this.finish();
     }

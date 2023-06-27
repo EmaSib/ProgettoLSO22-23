@@ -19,7 +19,7 @@
             android:layout_weight="5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Bevande trovate con gli ingredienti selezionati:" />
+            android:text="" />
 
         <ListView
             android:id="@+id/list_view_lista_bevande"

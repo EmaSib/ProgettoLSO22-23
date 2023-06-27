@@ -112,10 +112,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void onClick(View view) {
-        Intent apriPaginaListaBevande = new Intent();
+        Intent apriPaginaListaBevande = new Intent(this, ListaBevande.class);
         switch (view.getId()) {
             case R.id.genericheButton:
-                apriPaginaListaBevande.putExtra("TIPO", "Generiche");
+                apriPaginaListaBevande.putExtra("TIPO", "Generica");
                 startActivity(apriPaginaListaBevande);
                 this.onPause();
                 break;
@@ -130,12 +130,12 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 this.onPause();
                 break;
             case R.id.drink_analcoliciButton:
-                apriPaginaListaBevande.putExtra("TIPO", "Drink analcolici");
+                apriPaginaListaBevande.putExtra("TIPO", "Drink analcolico");
                 startActivity(apriPaginaListaBevande);
                 this.onPause();
                 break;
             case R.id.frullatiButton:
-                apriPaginaListaBevande.putExtra("TIPO", "Frullati");
+                apriPaginaListaBevande.putExtra("TIPO", "Frullato");
                 startActivity(apriPaginaListaBevande);
                 this.onPause();
                 break;
@@ -150,15 +150,15 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         View ricercaDialogLayout = this.getLayoutInflater().inflate(R.layout.ricerca_dialog, null);
         ricercaDialog.setView(ricercaDialogLayout);
         ricercaDialog.setTitle("Seleziona ingredienti da ricercare");
-        CheckBox campari = (CheckBox) findViewById(R.id.campariCheckBox);
+        CheckBox campari = (CheckBox) ricercaDialogLayout.findViewById(R.id.campariCheckBox);
         //campari.setChecked(false);
-        CheckBox martini = (CheckBox) findViewById(R.id.martiniCheckBox);
+        CheckBox martini = (CheckBox) ricercaDialogLayout.findViewById(R.id.martiniCheckBox);
         //martini.setChecked(false);
-        CheckBox mango = (CheckBox) findViewById(R.id.mangoCheckBox);
+        CheckBox mango = (CheckBox) ricercaDialogLayout.findViewById(R.id.mangoCheckBox);
         //mango.setChecked(false);
-        CheckBox menta = (CheckBox) findViewById(R.id.mentaCheckBox);
+        CheckBox menta = (CheckBox) ricercaDialogLayout.findViewById(R.id.mentaCheckBox);
         //menta.setChecked(false);
-        CheckBox bitter = (CheckBox) findViewById(R.id.bitterCheckBox);
+        CheckBox bitter = (CheckBox) ricercaDialogLayout.findViewById(R.id.bitterCheckBox);
         //bitter.setChecked(false);
 
         ricercaDialog.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
@@ -187,14 +187,20 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 }
                 else {
                     dialogInterface.dismiss();
-                    Intent apriPaginaListaBevande = new Intent();
-                    apriPaginaListaBevande.putExtra("TIPO", "Ricerca");
-                    startActivity(apriPaginaListaBevande);
+                    passaAListaBevande();
+
                 }
             }
         });
 
 
+    }
+
+    public void passaAListaBevande() {
+        Intent apriPaginaListaBevande = new Intent(this, ListaBevande.class);
+        apriPaginaListaBevande.putExtra("TIPO", "Ricerca");
+        startActivity(apriPaginaListaBevande);
+        this.onPause();
     }
 
 }
