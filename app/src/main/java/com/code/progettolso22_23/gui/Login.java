@@ -1,5 +1,6 @@
 package com.code.progettolso22_23.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,13 +54,15 @@ public class Login extends AppCompatActivity {
                 boolean succesLogIn = insertCheckCredentials();
                 if (succesLogIn) {
                     //TODO
+                    //controllo presenza utente verso server
                     //intent alla pagina HomePage
                     this.finish();
                 }
                 break;
             case R.id.registrazioneButton:
-                //TODO
-                //intent alla pagina Registrazione
+                Intent apriPaginaRegistrazione = new Intent(this, Registrazione.class);
+                startActivity(apriPaginaRegistrazione);
+                this.finish();
                 break;
         }
     }

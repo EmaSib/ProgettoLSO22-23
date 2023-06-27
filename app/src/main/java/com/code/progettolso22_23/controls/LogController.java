@@ -14,10 +14,12 @@ public class LogController {
 
     public boolean checkLogin(String username, String password) {
         //TODO
+        return true;
     }
 
     public boolean effettuaSignUp(String Username, String Password, String Nome, String Cognome) {
         //TODO
+        return true;
     }
 
 }

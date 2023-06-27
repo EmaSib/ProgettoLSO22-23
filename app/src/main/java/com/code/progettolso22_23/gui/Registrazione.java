@@ -1,9 +1,11 @@
 package com.code.progettolso22_23.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,6 +29,8 @@ public class Registrazione extends AppCompatActivity {
 
     private Button registrati;
 
+    private ImageButton backButton;
+
     private EditText UsernameField;
 
     private EditText PasswordField;
@@ -47,6 +51,9 @@ public class Registrazione extends AppCompatActivity {
         registrati = (Button) findViewById(R.id.registratiButton);
         registrati.setOnClickListener(this::onClick);
 
+        backButton = (ImageButton) findViewById(R.id.backButton2);
+        backButton.setOnClickListener(this::onClick);
+
         UsernameField = (EditText) findViewById(R.id.username_textfield);
         PasswordField = (EditText) findViewById(R.id.password_textfield);
         NomeField = (EditText) findViewById(R.id.nome_textfield);
@@ -56,11 +63,21 @@ public class Registrazione extends AppCompatActivity {
     }
 
     private void onClick(View view) {
-        boolean successful = insertCheckCredentials();
-        if(successful) {
-            //TODO
-            //intent a HomePage o Login
-            this.finish();
+        switch (view.getId()) {
+            case R.id.registratiButton:
+                boolean successful = insertCheckCredentials();
+                if (successful) {
+                    //TODO
+                    //effettua registrazione verso server
+                    //intent a HomePage o Login
+                    this.finish();
+                }
+                break;
+            case R.id.backButton2:
+                Intent ritornaPaginaLogin = new Intent(this, Login.class);
+                startActivity(ritornaPaginaLogin);
+                this.finish();
+                break;
         }
     }
 
