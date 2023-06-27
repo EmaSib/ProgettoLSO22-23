@@ -6,15 +6,13 @@ import java.util.List;
 public class Carrello {
 
     private String Username;
-    private List<Bevanda> ListaBevande;
+    private List<ElementoCarrello> Lista;
     private float Totale;
-    private int[] Quantita;
 
-    public Carrello(String username, List<Bevanda> listaBevande, float totale) {
+    public Carrello(String username, List<ElementoCarrello> lista, float totale) {
         Username = username;
-        ListaBevande = listaBevande;
+        Lista = lista;
         Totale = totale;
-        Quantita = new int[100];
     }
 
     public String getUsername() {
@@ -25,12 +23,12 @@ public class Carrello {
         Username = username;
     }
 
-    public List<Bevanda> getListaBevande() {
-        return ListaBevande;
+    public List<ElementoCarrello> getLista() {
+        return Lista;
     }
 
-    public void setListaBevande(List<Bevanda> listaBevande) {
-        ListaBevande = listaBevande;
+    public void setLista(List<ElementoCarrello> lista) {
+        Lista = lista;
     }
 
     public float getTotale() {
@@ -39,21 +37,5 @@ public class Carrello {
 
     public void setTotale(float totale) {
         Totale = totale;
-    }
-
-    public void aggiungiBevanda(Bevanda b) {
-        this.getListaBevande().add(b);
-    }
-
-    public void rimuoviBevanda(Bevanda b) {
-        this.getListaBevande().remove(b);
-    }
-
-    public int[] getQuantita() {
-        return Quantita;
-    }
-
-    public void setQuantita(int[] quantita) {
-        Quantita = quantita;
     }
 }

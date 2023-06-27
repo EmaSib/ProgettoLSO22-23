@@ -75,17 +75,13 @@ public class PaginaBevanda extends AppCompatActivity {
             Descrizione.setText("");
         }
 
-
-
     }
 
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.aggiungi_carrello_button_pagina_bevanda:
-                if(!carrelloController.aggiungiAlCarrello(BevandaScelta))
-                    Toast.makeText(this, "Limite carrello raggiunto, impossibile aggiungere!", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(this, "Bevanda aggiunta al carrello!", Toast.LENGTH_SHORT).show();
+                carrelloController.aggiungiAlCarrello(BevandaScelta);
+                Toast.makeText(this, "Elemento aggiunto al carrello con successo!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.torna_indietro_button_pagina_bevanda:
                 Intent apriListaBevande = new Intent(this, ListaBevande.class);
