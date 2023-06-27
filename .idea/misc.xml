@@ -3,28 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/app_toolbar_homepage.xml" value="0.31354166666666666" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/drawer_header_homepage.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/home_page.xml" value="0.26767200754005654" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/list_view_row_bevanda_assemblata.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/list_view_row_bevanda_normale.xml" value="0.553125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/list_view_row_generica.xml" value="0.31354166666666666" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/lista_bevande.xml" value="0.5" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/login.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/main_activity.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/pagina_bevanda.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/registrazione.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/ricerca_dialog.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/saldo.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/menu/drawer_hompage_menu.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/menu/menu.xml" value="0.3125" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/xml/network_security_config.xml" value="0.3125" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/drawable/gradient_background.xml" value="0.2185" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/drawable/logodrink.xml" value="0.1885" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/app_toolbar_homepage.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/bevanda_informazioni.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/drawer_header_homepage.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/home_page.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_bevanda_assemblata.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_bevanda_normale.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_generica.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/lista_bevande.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/login.xml" value="0.25" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/main_activity.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/saldo.xml" value="0.264" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/pagina_bevanda.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/registrazione.xml" value="0.264" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/ricerca_dialog.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/saldo.xml" value="0.2" />
       </map>
     </option>
   </component>

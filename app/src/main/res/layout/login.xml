@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/gradient_background">
 
 
     <Button
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="60dp"
         android:text="Username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -52,25 +52,28 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="371dp"
-        android:layout_height="174dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="516dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="16dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/get_drink_logos_transparent" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="67dp"
+        android:layout_height="20dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="36dp"
+        android:inputType="text"
+        android:minHeight="48dp"
         android:text="Password"
-        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_textfield" />
+        app:layout_constraintTop_toBottomOf="@+id/username_textfield"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/username_textfield"
