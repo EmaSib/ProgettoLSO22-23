@@ -1,60 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
-
-    <Button
-        android:id="@+id/registrazioneButton"
-        android:layout_width="150dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="120dp"
-        android:text="REGISTRATI"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_textfield" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="60dp"
-        android:text="Username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/accediButton"
-        android:layout_width="150dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="40dp"
-        android:text="ACCEDI"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_textfield" />
-
-    <EditText
-        android:id="@+id/password_textfield"
-        android:layout_width="236dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="516dp"
-        android:layout_height="243dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="600dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="-100dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
@@ -63,11 +20,32 @@
         app:srcCompat="@drawable/get_drink_logos_transparent" />
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-400dp"
+        android:layout_marginTop="200dp"
+        android:text="Username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        />
+    <EditText
+        android:id="@+id/username_textfield"
+        android:layout_width="236dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-65dp"
+        android:layout_marginTop="230dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
         android:id="@+id/textView8"
         android:layout_width="67dp"
         android:layout_height="20dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="-235dp"
+        android:layout_marginTop="270dp"
         android:inputType="text"
         android:minHeight="48dp"
         android:text="Password"
@@ -76,14 +54,50 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/username_textfield"
+        android:id="@+id/password_textfield"
         android:layout_width="236dp"
         android:layout_height="48dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="-70dp"
+        android:layout_marginTop="300dp"
         android:ems="10"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:ignore="SpeakableTextPresentCheck" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/accediButton"
+        android:layout_width="150dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="-200dp"
+        android:layout_marginTop="400dp"
+        android:text="ACCEDI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_textfield"
+        />
+
+
+    <Button
+        android:id="@+id/registrazioneButton"
+        android:layout_width="150dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="-150dp "
+        android:layout_marginTop="500dp"
+        android:text="REGISTRATI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_textfield" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
