@@ -56,6 +56,7 @@ public class Login extends AppCompatActivity {
                     //TODO
                     //controllo presenza utente verso server
                     Intent apriPaginaHomepage = new Intent(this, HomePage.class);
+                    apriPaginaHomepage.putExtra("USERNAME", Username);
                     startActivity(apriPaginaHomepage);
                     this.finish();
                 }

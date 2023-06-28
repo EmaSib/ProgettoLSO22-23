@@ -51,7 +51,7 @@ public class PaginaBevanda extends AppCompatActivity {
         Foto = (ImageView) findViewById(R.id.foto_pagina_bevanda_image_view);
         Foto.setImageBitmap(BevandaScelta.getFoto());
         Costo = (TextView) findViewById(R.id.costo_pagina_bevanda_text_view);
-        Costo.setText(String.valueOf(BevandaScelta.getCosto()));
+        Costo.setText("Costo: " + String.valueOf(BevandaScelta.getCosto()));
         Ingredienti = (TextView) findViewById(R.id.ingredienti_pagina_bevanda_text_view);
         ListaIngredienti = (ListView) findViewById(R.id.lista_ingredienti_pagina_bevanda_list_view);
         Descrizione = (TextView) findViewById(R.id.descrizione_pagina_bevanda_text_view);

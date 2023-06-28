@@ -25,8 +25,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
     private MainController mainController = MainController.getIstance();
 
-    private String Username;
-
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private Toolbar toolbar;
@@ -100,13 +98,17 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             case R.id.carrello:
                 //TODO
                 //intent al carrello
+                break;
             case R.id.portafoglio:
-                //TODO
-                //intent al portafoglio
+                Intent apriSaldo = new Intent(this, Saldo.class);
+                startActivity(apriSaldo);
+                this.onPause();
+                break;
             case R.id.logout:
+                Intent apriPaginaLogin = new Intent(this, Login.class);
+                startActivity(apriPaginaLogin);
                 this.finish();
-                //TODO
-                //intent al login
+                break;
         }
         return false;
     }

@@ -46,7 +46,7 @@ public class ListViewAdapterBevandaNormale extends BaseAdapter {
         TextView text = (TextView) vi.findViewById(R.id.nome_list_view_row_bevanda_normale);
         text.setText(nomi[i]);
         TextView text2 = (TextView) vi.findViewById(R.id.costo_list_view_row_bevanda_normale);
-        text2.setText(costi[i]);
+        text2.setText("Costo: " + costi[i]);
         return vi;
     }
 }

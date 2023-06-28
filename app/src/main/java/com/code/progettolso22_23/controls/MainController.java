@@ -194,9 +194,10 @@ public class MainController {
     public String[] getIngredientiBevandeComeArray(List<Bevanda> bevande) {
         String[] result = new String[bevande.size()];
         int i=0;
+        String tmp = "";
         for (Bevanda b : bevande) {
             Assemblata a = (Assemblata) b;
-            String tmp="";
+            tmp="";
             for (String s : a.getIngredienti()) {
                 tmp.concat(s);
                 tmp.concat(" - ");
@@ -207,6 +208,17 @@ public class MainController {
         return result;
     }
 
+    public float getSaldoByUsername() {
+
+        return daoController.getSaldoByUsername(User);
+
+    }
+
+    public void updateSaldoDiUtente(float saldo) {
+
+        daoController.updateSaldoDiUtente(User, saldo);
+
+    }
 
 
 

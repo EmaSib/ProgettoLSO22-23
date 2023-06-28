@@ -33,4 +33,18 @@ public class DAOController {
         return result;
     }
 
+    public float getSaldoByUsername(String username) {
+
+        //metodo che tramite l'username ottiene il saldo dell'utente
+        //il seguente valore è di test
+        return 25.7f;
+
+    }
+
+    public void updateSaldoDiUtente(String username, float saldo) {
+
+        //metodo che aggiorna il valore del saldo di un utente nel database
+
+    }
+
 }

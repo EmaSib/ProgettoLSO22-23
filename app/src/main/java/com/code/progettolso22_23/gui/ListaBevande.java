@@ -58,8 +58,6 @@ public class ListaBevande extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = (String)parent.getItemAtPosition(position);
                 String nome = value;
-                //TODO
-                //controllare se nome corrisponde a tutta la linea o solo al nome della bevanda
                 passaAPaginaBevanda(nome);
             }
         });
@@ -69,8 +67,6 @@ public class ListaBevande extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = (String)parent.getItemAtPosition(position);
                 String nome = value;
-                //TODO
-                //controllare se nome corrisponde a tutta la linea o solo al nome della bevanda
                 passaAPaginaBevanda(nome);
             }
         });
@@ -100,6 +96,7 @@ public class ListaBevande extends AppCompatActivity {
             return;
         }
         if(bevande.get(0).getClass().equals(Assemblata.class)) {
+            System.out.println(mainController.getCostiBevandeComeArray(bevande)[0]);
             listViewBevande.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(bevande), mainController.getCostiBevandeComeArray(bevande), mainController.getIngredientiBevandeComeArray(bevande)));
             listViewBevandeConsigliate.setAdapter(new ListViewAdapterBevandaAssemblata(this, mainController.getNomiBevandeComeArray(consigliate), mainController.getCostiBevandeComeArray(consigliate), mainController.getIngredientiBevandeComeArray(consigliate)));
         } else {
