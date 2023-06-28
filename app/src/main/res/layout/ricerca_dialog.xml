@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="true">
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:background="@drawable/gradient_background">
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -16,8 +17,8 @@
 
     <CheckBox
         android:id="@+id/campariCheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:text="Campari"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="89dp" />

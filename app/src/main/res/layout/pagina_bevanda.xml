@@ -21,7 +21,7 @@
     <ImageView
         android:id="@+id/foto_pagina_bevanda_image_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:layout_weight="1" />
 
     <TextView
@@ -38,14 +38,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:fontFamily="@font/abril_fatface"
         android:text="INGREDIENTI:"
-        android:textSize="10pt"
-        android:fontFamily="@font/abril_fatface" />
+        android:textSize="10pt" />
 
     <ListView
         android:id="@+id/lista_ingredienti_pagina_bevanda_list_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="115dp"
         android:layout_weight="1"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -60,16 +60,18 @@
 
     <Button
         android:id="@+id/torna_indietro_button_pagina_bevanda"
-        android:layout_weight="10"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="376dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:layout_marginStart="17dp"
         android:text="TORNA INDIETRO" />
 
     <Button
         android:id="@+id/aggiungi_carrello_button_pagina_bevanda"
-        android:layout_weight="10"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="376dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="17dp"
         android:text="AGGIUNGI AL CARRELLO" />
 
 </LinearLayout>
