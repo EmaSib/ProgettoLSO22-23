@@ -38,14 +38,6 @@ public class CarrelloController {
         carrello.getLista().add(tmp);
     }
 
-    public Carrello getCarrello() {
-        return carrello;
-    }
-
-    public void setCarrello(Carrello carrello) {
-        this.carrello = carrello;
-    }
-
     public void aggiornaQuantitaBevandaCarrello(String nome, int quantita) {
         /*for (ElementoCarrello e : carrello.getLista()) {
             if(e.getBevanda().getNome().equals(nome)) {
