@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:background="@drawable/gradient_background"
+    >
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <TextView
+            android:id="@+id/text_view_lista_bevande"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Stai per acquistare le seguenti bevande:" />
+
+        <ListView
+            android:id="@+id/list_view_lista_acquisto"
+            android:layout_weight="10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            />
+
+        <Button
+            android:id="@+id/confermabutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONFERMA" />
+
+        <Button
+            android:id="@+id/annullabutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ANNULLA" />
+
+    </LinearLayout>
+
+</ScrollView>
