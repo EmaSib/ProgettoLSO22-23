@@ -96,8 +96,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             default:
                 break;
             case R.id.carrello:
-                //TODO
-                //intent al carrello
+                Intent apriPaginaCarrello = new Intent(this, Carrello.class);
+                startActivity(apriPaginaCarrello);
+                this.onPause();
+                break;
                 break;
             case R.id.portafoglio:
                 Intent apriSaldo = new Intent(this, Saldo.class);

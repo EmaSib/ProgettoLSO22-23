@@ -55,5 +55,10 @@
         <activity android:name=".gui.Saldo">
 
         </activity>
+
+        <activity android:name=".gui.Carrello">
+
+        </activity>
+
     </application>
 </manifest>

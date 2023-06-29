@@ -37,4 +37,12 @@ public class CarrelloController {
         ElementoCarrello tmp = new ElementoCarrello(b, 1);
         carrello.getLista().add(tmp);
     }
+
+    public Carrello getCarrello() {
+        return carrello;
+    }
+
+    public void setCarrello(Carrello carrello) {
+        this.carrello = carrello;
+    }
 }

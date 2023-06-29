@@ -42,7 +42,6 @@ public class Registrazione extends AppCompatActivity {
     private AlertDialog.Builder SignUpFallito;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
