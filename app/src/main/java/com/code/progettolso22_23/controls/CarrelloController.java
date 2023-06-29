@@ -99,4 +99,16 @@ public class CarrelloController {
         carrello.getLista().removeAll(carrello.getLista());
         carrello = new Carrello(mainController.getUser(), new ArrayList<>(), 0);
     }
+
+    public float ottieniPrezzoTotale() {
+        float result = 0;
+        float tmp = 0;
+        for(ElementoCarrello e : carrello.getLista()) {
+            tmp = e.getBevanda().getCosto() * e.getQuantita();
+            result = result + tmp;
+            tmp = 0;
+        }
+        return result;
+    }
+
 }

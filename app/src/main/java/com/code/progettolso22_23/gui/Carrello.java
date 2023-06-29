@@ -117,6 +117,7 @@ public class Carrello extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 carrelloController.aggiornaQuantitaBevandaCarrello(BevandaScelta, selectedValue[0]);
+                updateListView();
                 dialogInterface.dismiss();
             }
             //TODO

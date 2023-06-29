@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.code.progettolso22_23.R;
 import com.code.progettolso22_23.controls.CarrelloController;
+import com.code.progettolso22_23.utils.ListViewAdapterCarrello;
 
 public class Acquisto extends AppCompatActivity {
 
@@ -34,6 +35,11 @@ public class Acquisto extends AppCompatActivity {
         annullaButton.setOnClickListener(this::onClick);
 
         ListaBevande = (ListView) findViewById(R.id.list_view_lista_acquisto);
+        updateListView();
+    }
+
+    private void updateListView() {
+        ListaBevande.setAdapter(new ListViewAdapterCarrello(this, carrelloController.ottieniBevandeDaCarrello(), carrelloController.ottieniCostoBevandaDaCarrello(), carrelloController.ottieniQuantitaDaCarrello()));
     }
 
     private void onClick(View view) {
