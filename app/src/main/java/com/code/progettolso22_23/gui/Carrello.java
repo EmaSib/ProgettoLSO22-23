@@ -77,8 +77,9 @@ public class Carrello extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.acquistabutton:
-                //TODO
-                //Intent pagina acquisto
+                Intent apriPaginaAcquisto = new Intent(this, Acquisto.class);
+                startActivity(apriPaginaAcquisto);
+                this.finish();
                 break;
             case R.id.backButton2:
                 //Intent ritornaPaginaHomePage = new Intent(this, HomePage.class);
