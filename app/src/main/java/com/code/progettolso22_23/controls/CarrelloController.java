@@ -45,4 +45,58 @@ public class CarrelloController {
     public void setCarrello(Carrello carrello) {
         this.carrello = carrello;
     }
+
+    public void aggiornaQuantitaBevandaCarrello(String nome, int quantita) {
+        /*for (ElementoCarrello e : carrello.getLista()) {
+            if(e.getBevanda().getNome().equals(nome)) {
+                e.setQuantita(e.getQuantita() - quantita);
+                if(e.getQuantita() <= 0)
+                    carrello.getLista().remove(e);
+            }
+        }*/
+        for (ElementoCarrello e : carrello.getLista()) {
+            if (e.getBevanda().getNome().equals(nome)) {
+                if (quantita == 0)
+                    carrello.getLista().remove(e);
+                else
+                    e.setQuantita(quantita);
+
+            }
+        }
+    }
+
+    public String[] ottieniBevandeDaCarrello() {
+        String[] result = new String[carrello.getLista().size()];
+        int i=0;
+        for(ElementoCarrello e : carrello.getLista()) {
+            result[i] = e.getBevanda().getNome();
+            i++;
+        }
+        return result;
+    }
+
+    public String[] ottieniCostoBevandaDaCarrello() {
+        String[] result = new String[carrello.getLista().size()];
+        int i=0;
+        for(ElementoCarrello e : carrello.getLista()) {
+            result[i] = String.valueOf(e.getBevanda().getCosto() * e.getQuantita());
+            i++;
+        }
+        return result;
+    }
+
+    public String[] ottieniQuantitaDaCarrello() {
+        String[] result = new String[carrello.getLista().size()];
+        int i=0;
+        for(ElementoCarrello e : carrello.getLista()) {
+            result[i] = String.valueOf(e.getQuantita());
+            i++;
+        }
+        return result;
+    }
+
+    public void svuotaCarrello() {
+        carrello.getLista().removeAll(carrello.getLista());
+        carrello = new Carrello(mainController.getUser(), new ArrayList<>(), 0);
+    }
 }

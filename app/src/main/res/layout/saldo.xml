@@ -47,7 +47,7 @@
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       />
+        />
 
     <TextView
         android:id="@+id/textView4"
@@ -80,7 +80,7 @@
         android:layout_marginStart="-160dp"
         android:text="RICARICA"
         android:textCursorDrawable="@color/white"
- />
+        />
 
     <Button
         android:id="@+id/torna_indietro"
@@ -89,6 +89,6 @@
         android:layout_marginTop="600dp"
         android:layout_marginStart="-10dp"
         android:text="Torna indietro"
- />
+        />
 
 </LinearLayout>

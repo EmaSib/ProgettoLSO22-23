@@ -22,17 +22,17 @@ import com.code.progettolso22_23.controls.MainController;
 import com.code.progettolso22_23.entities.Assemblata;
 import com.code.progettolso22_23.utils.ListViewAdapterBevandaAssemblata;
 import com.code.progettolso22_23.utils.ListViewAdapterBevandaNormale;
+import com.code.progettolso22_23.utils.ListViewAdapterCarrello;
 
 public class Carrello extends AppCompatActivity {
 
     private CarrelloController carrelloController = CarrelloController.getIstance();
-
     private MainController mainController = MainController.getIstance();
 
+    private String BevandaScelta;
+
     private Button acquistaButton;
-
     private ImageButton backButton;
-
     private ListView ListaCarrello;
 
     private AlertDialog.Builder ModificaCarrello;
@@ -42,6 +42,8 @@ public class Carrello extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carrello);
 
+        BevandaScelta="";
+
         acquistaButton = (Button) findViewById(R.id.acquistabutton);
         acquistaButton.setOnClickListener(this::onClick);
 
@@ -49,22 +51,22 @@ public class Carrello extends AppCompatActivity {
         backButton.setOnClickListener(this::onClick);
 
         ListaCarrello = (ListView) findViewById(R.id.list_view_lista_carrello);
-        updateListView();
         ListaCarrello.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = (String)parent.getItemAtPosition(position);
                 String nome = value;
+                BevandaScelta = nome;
                 apriDialog();
             }
         });
+        updateListView();
 
         ModificaCarrello = new AlertDialog.Builder(this);
     }
 
     private void updateListView() {
-       // ListaCarrello.setAdapter(new ListViewAdapterBevandaNormale(this, mainController.getNomiBevandeComeArray(carrelloController.getCarrello().getLista()), mainController.getCostiBevandeComeArray(carrelloController.getCarrello().getLista())));
-     //   listViewBevandeConsigliate.setAdapter(new ListViewAdapterBevandaNormale(this, mainController.getNomiBevandeComeArray(consigliate), mainController.getCostiBevandeComeArray(consigliate)));
+        ListaCarrello.setAdapter(new ListViewAdapterCarrello(this, carrelloController.ottieniBevandeDaCarrello(), carrelloController.ottieniCostoBevandaDaCarrello(), carrelloController.ottieniQuantitaDaCarrello()));
     }
 
     private void apriDialog() {
@@ -79,8 +81,8 @@ public class Carrello extends AppCompatActivity {
                 //Intent pagina acquisto
                 break;
             case R.id.backButton2:
-                Intent ritornaPaginaHomePage = new Intent(this, HomePage.class);
-                startActivity(ritornaPaginaHomePage);
+                //Intent ritornaPaginaHomePage = new Intent(this, HomePage.class);
+                //startActivity(ritornaPaginaHomePage);
                 this.finish();
                 break;
         }
@@ -91,10 +93,17 @@ public class Carrello extends AppCompatActivity {
         modificaDialog.setView(modificaDialogLayout);
         modificaDialog.setTitle("Modifica carrello");
 
+        final int[] selectedValue = new int[1];
         NumberPicker picker = (NumberPicker) modificaDialogLayout.findViewById(R.id.number_picker_quantita);
+        picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                selectedValue[0] = i1;
+            }
+        });
         picker.setMinValue(0);
         picker.setMaxValue(100);
-      //  picker.setValue(5);
+        //  picker.setValue(5);
 
         modificaDialog.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
             @Override
@@ -104,20 +113,13 @@ public class Carrello extends AppCompatActivity {
         });
 
         modificaDialog.setPositiveButton("Conferma", new DialogInterface.OnClickListener() {
-            int selectedValue;
-
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-                    @Override
-                    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                        selectedValue = newVal;
-                    }
-                });
-                //TODO
-                //modifica della quantità dell'item nel carrello
+                carrelloController.aggiornaQuantitaBevandaCarrello(BevandaScelta, selectedValue[0]);
+                dialogInterface.dismiss();
             }
-
+            //TODO
+            //modifica della quantità dell'item nel carrello
         });
 
 

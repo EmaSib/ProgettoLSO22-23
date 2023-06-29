@@ -100,7 +100,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(apriPaginaCarrello);
                 this.onPause();
                 break;
-                break;
             case R.id.portafoglio:
                 Intent apriSaldo = new Intent(this, Saldo.class);
                 startActivity(apriSaldo);
