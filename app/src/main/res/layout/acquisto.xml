@@ -30,6 +30,36 @@
             android:layout_height="0dp"
             />
 
+        <TextView
+            android:id="@+id/textViewTOTALE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TOTALE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewImporto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textViewSALDO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SALDO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewSaldoDisponibile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
         <Button
             android:id="@+id/confermabutton"
             android:layout_width="match_parent"

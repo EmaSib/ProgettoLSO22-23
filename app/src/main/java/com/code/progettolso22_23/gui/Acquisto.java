@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,14 +14,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.code.progettolso22_23.R;
 import com.code.progettolso22_23.controls.CarrelloController;
 import com.code.progettolso22_23.utils.ListViewAdapterCarrello;
+import com.code.progettolso22_23.controls.MainController;
 
 public class Acquisto extends AppCompatActivity {
 
     private CarrelloController carrelloController = CarrelloController.getIstance();
 
+    private MainController mainController = MainController.getIstance();
+
     private Button confermaButton;
 
     private Button annullaButton;
+
+    private TextView totaleTextView;
+
+    private TextView saldoTextView;
 
     private ListView ListaBevande;
 
@@ -34,19 +43,28 @@ public class Acquisto extends AppCompatActivity {
         annullaButton = (Button) findViewById(R.id.annullabutton);
         annullaButton.setOnClickListener(this::onClick);
 
+        totaleTextView = (TextView) findViewById(R.id.textViewImporto);
+        totaleTextView.setText(String.valueOf(carrelloController.ottieniPrezzoTotale()));
+
+        saldoTextView = (TextView) findViewById(R.id.textViewSaldoDisponibile);
+        saldoTextView.setText(String.valueOf(mainController.getSaldoByUsername()));
+
         ListaBevande = (ListView) findViewById(R.id.list_view_lista_acquisto);
         updateListView();
-    }
-
-    private void updateListView() {
-        ListaBevande.setAdapter(new ListViewAdapterCarrello(this, carrelloController.ottieniBevandeDaCarrello(), carrelloController.ottieniCostoBevandaDaCarrello(), carrelloController.ottieniQuantitaDaCarrello()));
     }
 
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.confermabutton:
-                carrelloController.svuotaCarrello();
-                this.finish();
+                float saldo = Float.valueOf((String) saldoTextView.getText());
+                float totale = Float.valueOf((String) totaleTextView.getText());
+                if(totale < saldo){
+                    carrelloController.svuotaCarrello();
+                    mainController.updateSaldoDiUtente(saldo - totale);
+                    this.finish();
+                } else {
+                    Toast.makeText(this, "Saldo non sufficiente.", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.annullabutton:
                 Intent ritornaPaginaCarrello = new Intent(this, Carrello.class);
@@ -54,6 +72,11 @@ public class Acquisto extends AppCompatActivity {
                 this.finish();
                 break;
         }
+    }
+
+    private void updateListView() {
+        ListaBevande.setAdapter(
+                new ListViewAdapterCarrello(this, carrelloController.ottieniBevandeDaCarrello(), carrelloController.ottieniCostoBevandaDaCarrello(), carrelloController.ottieniQuantitaDaCarrello()));
     }
 
 }
