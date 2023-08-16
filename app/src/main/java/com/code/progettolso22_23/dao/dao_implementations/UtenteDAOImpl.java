@@ -17,9 +17,9 @@ public class UtenteDAOImpl implements UtenteDAO {
     public int checkLogin(String username, String password) {
         String result = null;
         try {
-            if(connection.request("login\n"+username+"@"+password))
+            if(connection.request("login\n"+username+"@"+password+'\n'))
                 result = connection.receive();
-            if(result.equals("Success"))
+            if(result.equals(username+"@"+password+"\n"))
                 return 1;
             else
                 return 0;
