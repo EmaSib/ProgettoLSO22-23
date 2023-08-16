@@ -37,6 +37,8 @@ public class Saldo extends AppCompatActivity {
         daRicaricare = (EditText) findViewById(R.id.editTextNumber);
 
         saldo = mainController.getSaldoByUsername();
+        if(saldo == -1)
+            Toast.makeText(this, "Impossibile visualizzare saldo, errore con il server!\nRiprova tra qualche momento...", Toast.LENGTH_SHORT).show();
         saldoTextView.setText(String.valueOf(saldo));
 
     }
@@ -52,10 +54,13 @@ public class Saldo extends AppCompatActivity {
                     Toast.makeText(this, "Impossibile ricaricare il saldo, riprova!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    saldo = saldo + Float.valueOf(String.valueOf(daRicaricare.getText()));
-                    saldoTextView.setText(String.valueOf(saldo));
-                    mainController.updateSaldoDiUtente(saldo);
-                    Toast.makeText(this, "Saldo ricaricato con successo!", Toast.LENGTH_SHORT).show();
+                    if(mainController.updateSaldoDiUtente(saldo + Float.valueOf(String.valueOf(daRicaricare.getText())))) {
+                        Toast.makeText(this, "Saldo ricaricato con successo!", Toast.LENGTH_SHORT).show();
+                        saldo = saldo + Float.valueOf(String.valueOf(daRicaricare.getText()));
+                        saldoTextView.setText(String.valueOf(saldo));
+                    }
+                    else
+                        Toast.makeText(this, "Impossibile ricaricare il saldo.\n Riprova tra qualche momento...", Toast.LENGTH_SHORT).show();
                 }
                 daRicaricare.setText("");
                 break;

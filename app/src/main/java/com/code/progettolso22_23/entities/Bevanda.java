@@ -3,11 +3,11 @@ package com.code.progettolso22_23.entities;
 import android.graphics.Bitmap;
 
 public class Bevanda {
-    private String Nome;
-    private String Tipo;
-    private Bitmap Foto;
-    private float Costo;
-    private int NumeroVendite;
+    private String Nome=null;
+    private String Tipo=null;
+    private Bitmap Foto=null;
+    private float Costo=-1;
+    private int NumeroVendite=-1;
 
     public Bevanda() {
     }

@@ -2,6 +2,7 @@ package com.code.progettolso22_23.controls;
 
 public class LogController {
 
+    private DAOController daoController = null;
     private static LogController instance = null;
 
     private LogController() {}
@@ -12,14 +13,14 @@ public class LogController {
         return instance;
     }
 
-    public boolean checkLogin(String username, String password) {
-        //TODO
-        return true;
+    public int checkLogin(String username, String password) {
+        daoController = DAOController.getIstance();
+        return daoController.checkLogin(username, password);
     }
 
     public boolean effettuaSignUp(String Username, String Password, String Nome, String Cognome) {
-        //TODO
-        return true;
+        daoController = DAOController.getIstance();
+        return daoController.effettuaSignUp(Username, Password, Nome, Cognome);
     }
 
 }

@@ -103,4 +103,14 @@ public class CarrelloController {
         return result;
     }
 
+    public boolean updateVenditeBevandeAcquistate() {
+        boolean result;
+        for(ElementoCarrello e : carrello.getLista()) {
+            result = daoController.updateVenditeBevandeAcquistate(e.getBevanda().getNome(), e.getQuantita());
+            if (result == false)
+                return false;
+        }
+        return true;
+    }
+
 }

@@ -20,7 +20,7 @@ public class MainController {
 
     private static MainController istance = null;
     private String User;
-    private List<String> ingredienti = new ArrayList<String>();
+    private List<String> ingredienti = new ArrayList<>();
     private List<Bevanda> AllBevande = new ArrayList<>();
     private DAOController daoController;
 
@@ -214,10 +214,14 @@ public class MainController {
 
     }
 
-    public void updateSaldoDiUtente(float saldo) {
+    public boolean updateSaldoDiUtente(float saldo) {
 
-        daoController.updateSaldoDiUtente(User, saldo);
+        return daoController.updateSaldoDiUtente(User, saldo);
 
+    }
+
+    public void closeConnection() {
+        daoController.closeConnection();
     }
 
 

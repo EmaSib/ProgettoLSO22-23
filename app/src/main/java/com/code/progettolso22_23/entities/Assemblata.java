@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import java.util.List;
 
 public class Assemblata extends Bevanda{
-    private List<String> Ingredienti;
-    private String Descrizione;
+    private List<String> Ingredienti=null;
+    private String Descrizione=null;
 
     public Assemblata() {
 

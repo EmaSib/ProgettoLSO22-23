@@ -88,13 +88,21 @@ public class Login extends AppCompatActivity {
             Toast.makeText(this, "Password non inserita. Riprova!", Toast.LENGTH_LONG).show();
             UsernameField.setText("");
         } else {
-            boolean successful = logController.checkLogin(Username, Password);
-            if(successful){
+            int successful = logController.checkLogin(Username, Password);
+            if(successful == 1){
                 success = true;
+            }
+            else if(successful==0){
+                LoginFallito.setTitle("Login non Riuscito!");
+                LoginFallito.setMessage("Le credenziali inserite non sono corrette!\nRiprova...");
+                LoginFallito.setCancelable(true);
+                LoginFallito.show();
+                UsernameField.setText("");
+                PasswordField.setText("");
             }
             else {
                 LoginFallito.setTitle("Login non Riuscito!");
-                LoginFallito.setMessage("Le credenziali inserite non sono corrette!\nRiprova...");
+                LoginFallito.setMessage("Il server non risponde!\nRiprova tra qualche momento...");
                 LoginFallito.setCancelable(true);
                 LoginFallito.show();
                 UsernameField.setText("");

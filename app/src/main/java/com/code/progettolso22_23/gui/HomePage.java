@@ -78,6 +78,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             Toast.makeText(this, "Connessione assente, impossibile continuare", Toast.LENGTH_SHORT).show();
         }
         mainController.inizializzaAllBevande();
+        if(mainController.getAllBevande().size()==0) {
+            Toast.makeText(this, "Non sono state trovate bevande!", Toast.LENGTH_SHORT).show();
+        }
         Intent i = getIntent();
         mainController.setUser(i.getStringExtra("USERNAME"));
 
@@ -106,6 +109,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 this.onPause();
                 break;
             case R.id.logout:
+                mainController.closeConnection();
                 Intent apriPaginaLogin = new Intent(this, Login.class);
                 startActivity(apriPaginaLogin);
                 this.finish();
