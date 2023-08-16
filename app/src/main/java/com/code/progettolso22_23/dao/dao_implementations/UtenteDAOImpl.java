@@ -52,6 +52,8 @@ public class UtenteDAOImpl implements UtenteDAO {
         try {
             if(connection.request("getsaldo\n"+username)) {
                 query = connection.receive();
+                if(query.equals("Failed"))
+                    return -1;
                 result = Float.valueOf(query);
             }
             return result;

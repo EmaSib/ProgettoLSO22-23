@@ -24,8 +24,11 @@ public class BevandaDAOImpl implements BevandaDAO {
         Bevanda tmp = new Bevanda();
         Assemblata tmpAssemblata = new Assemblata();
         try {
-            if(connection.request("getBevande"))
+            if(connection.request("getBevande")) {
                 message = connection.receive();
+                if (message.equals("Failed"))
+                    return null;
+            }
             else
                 return null;
             char[] bevandeString;
@@ -34,7 +37,7 @@ public class BevandaDAOImpl implements BevandaDAO {
             int k = 0;
             int j = 0;
             for(i = 0; i < bevandeString.length; i++) {
-                if(bevandeString[i] == '\n') {
+                if(bevandeString[i] == '@' && tmp.getNome() == null) {
                     tmp.setNome(message.substring(k, i - 1));
                     k = i + 1;
                 }
@@ -73,10 +76,14 @@ public class BevandaDAOImpl implements BevandaDAO {
                         }
                     }
                 }
-                if(tmpAssemblata.getNome().equals(null))
+                if(tmpAssemblata.getNome().equals(null)) {
                     result.add(tmp);
-                else
+                    tmp = new Bevanda();
+                }
+                else {
                     result.add(tmpAssemblata);
+                    tmpAssemblata = new Assemblata();
+                }
                 k = i;
             }
             return result;

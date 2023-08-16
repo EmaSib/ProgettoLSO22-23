@@ -15,8 +15,8 @@ public class SocketInitializer {
     private Socket socket;
     private PrintStream outMessage;
     private BufferedReader inMessage;
-    private String IPAddress="prova";
-    private int PortNumber=80;
+    private String IPAddress="127.0.0.1";
+    private int PortNumber=5432;
 
     private SocketInitializer() {
         try {
