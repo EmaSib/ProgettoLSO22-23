@@ -33,9 +33,9 @@ public class UtenteDAOImpl implements UtenteDAO {
     public boolean effettuaSignUp(String username, String password, String nome, String cognome) {
         String result = null;
         try {
-            if(connection.request("signup\n"+username+"@"+password+"@"+nome+"@"+cognome+"@"+0))
+            if(connection.request("signup\n"+username+"@"+password+"@"+nome+"@"+cognome+"\n"))
                 result = connection.receive();
-            if(result.equals("Success"))
+            if(!result.equals("Failed"))
                 return true;
             else
                 return false;
@@ -50,7 +50,7 @@ public class UtenteDAOImpl implements UtenteDAO {
         String query;
         float result = -1;
         try {
-            if(connection.request("getsaldo\n"+username)) {
+            if(connection.request("getsaldo\n"+username+"\n")) {
                 query = connection.receive();
                 if(query.equals("Failed"))
                     return -1;
@@ -67,9 +67,9 @@ public class UtenteDAOImpl implements UtenteDAO {
     public boolean updateSaldoDiUtente(String username, float saldo) {
         String result = null;
         try {
-            if(connection.request("updatesaldo\n"+username+"@"+String.valueOf(saldo)))
+            if(connection.request("updatesaldo\n"+String.valueOf(saldo)+"@"+username+"\n"))
                 result = connection.receive();
-            if(result.equals("Success"))
+            if(!result.equals("Failed"))
                 return true;
             else
                 return false;

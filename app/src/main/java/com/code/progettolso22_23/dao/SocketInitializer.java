@@ -15,8 +15,8 @@ public class SocketInitializer {
     private Socket socket;
     private PrintStream outMessage;
     private BufferedReader inMessage;
-    private String IPAddress="127.0.0.1";
-    private int PortNumber=5432;
+    private String IPAddress="10.0.2.15";
+    private int PortNumber=5200;
 
     private SocketInitializer() {
         try {
@@ -25,6 +25,7 @@ public class SocketInitializer {
             inMessage = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         } catch (Exception e) {
             Log.e("SocketInitializer -> Costruttore -> ", "Errore creazione socket: " + e.getMessage() );
+            e.printStackTrace();
         }
     }
 
@@ -43,6 +44,7 @@ public class SocketInitializer {
             result = true;
         } catch (Exception e) {
             Log.e("SocketInitializer -> request -> ", "Errore invio messaggio: " + e.getMessage() );
+            e.printStackTrace();
             throw new Exception();
         }
         return result;
@@ -56,6 +58,7 @@ public class SocketInitializer {
             result = inMessage.readLine();
         } catch (Exception e) {
             Log.e("SocketInitializer -> receive -> ", "Errore ricezione messaggio: " + e.getMessage() );
+            e.printStackTrace();
             throw new Exception();
         }
         return result;
