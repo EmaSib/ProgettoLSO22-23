@@ -24,7 +24,7 @@ public class BevandaDAOImpl implements BevandaDAO {
         Bevanda tmp = new Bevanda();
         Assemblata tmpAssemblata = new Assemblata();
         try {
-            if(connection.request("getBevande\n")) {
+            if(connection.request("getBevande]")) {
                 message = connection.receive();
                 if (message.equals("Failed"))
                     return null;
@@ -98,7 +98,7 @@ public class BevandaDAOImpl implements BevandaDAO {
     public boolean updateVenditeBevanda(String nome, int numero) {
         String result = null;
         try {
-            if(connection.request("updatevenditabevanda\n"+String.valueOf(numero)+"@"+nome+"\n"))
+            if(connection.request("updatevenditabevanda\n"+String.valueOf(numero)+"@"+nome+"]"))
                 result = connection.receive();
             if(!result.equals("Failed"))
                 return true;

@@ -15,7 +15,7 @@ public class SocketInitializer {
     private Socket socket;
     private PrintStream outMessage;
     private BufferedReader inMessage;
-    private String IPAddress="10.0.2.15";
+    private String IPAddress="192.168.1.18";
     private int PortNumber=5200;
 
     private SocketInitializer() {
