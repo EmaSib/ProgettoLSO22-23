@@ -9,10 +9,11 @@ public class Assemblata extends Bevanda{
     private String Descrizione=null;
 
     public Assemblata() {
-
+        super();
     }
 
     public Assemblata(List<String> ingredienti, String descrizione) {
+        super();
         Ingredienti = ingredienti;
         Descrizione = descrizione;
     }

@@ -102,8 +102,10 @@ public class PaginaBevanda extends AppCompatActivity {
 
         String[] result = new String[BevandaSceltaAssemblata.getIngredienti().size()];
         int i=0;
-        for(String s : BevandaSceltaAssemblata.getIngredienti())
+        for(String s : BevandaSceltaAssemblata.getIngredienti()){
             result[i] = s;
+            i++;
+        }
         return result;
 
     }

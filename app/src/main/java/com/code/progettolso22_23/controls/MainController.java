@@ -107,7 +107,10 @@ public class MainController {
     }*/
 
     public void inizializzaAllBevande() {
-        this.setAllBevande(daoController.ottieniTutteLeBevande());
+        if(AllBevande.size() == 0)
+            this.setAllBevande(daoController.ottieniTutteLeBevande());
+        if(AllBevande == null)
+            AllBevande = new ArrayList<>();
     }
 
     public List<Bevanda> restituisciBevandeDiUnTipo(String tipo) {
@@ -199,8 +202,8 @@ public class MainController {
             Assemblata a = (Assemblata) b;
             tmp="";
             for (String s : a.getIngredienti()) {
-                tmp.concat(s);
-                tmp.concat(" - ");
+                tmp = tmp.concat(s);
+                tmp = tmp.concat(" - ");
             }
             result[i] = tmp;
             i++;

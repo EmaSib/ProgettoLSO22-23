@@ -26,6 +26,7 @@ public class UtenteDAOImpl implements UtenteDAO {
                 return 0;
         } catch (Exception e) {
             Log.e("UtenteDAOImpl -> checkLogin -> ", "Errore: " + e.getMessage() );
+            e.printStackTrace();
             return -1;
         }
     }

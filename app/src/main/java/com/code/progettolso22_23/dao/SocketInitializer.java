@@ -15,7 +15,7 @@ public class SocketInitializer {
     private Socket socket;
     private PrintStream outMessage;
     private BufferedReader inMessage;
-    private String IPAddress="192.168.1.18";
+    private String IPAddress="192.168.1.19";
     private int PortNumber=5200;
 
     private SocketInitializer() {
@@ -36,8 +36,10 @@ public class SocketInitializer {
     }
 
     public boolean request(String message) throws Exception {
-        if(socket.isClosed() || !socket.isConnected())
+        if(socket.isClosed() || !socket.isConnected()){
+            Log.e("SocketInitializer -> request -> ", "SONO QUI1 " );
             istance = new SocketInitializer();
+        }
         boolean result;
         try {
             outMessage.println(message);
@@ -51,8 +53,10 @@ public class SocketInitializer {
     }
 
     public String receive() throws Exception {
-        if(socket.isClosed() || !socket.isConnected())
+        if(socket.isClosed()){
+            Log.d("SocketInitializer -> receive -> ", "SONO QUI2 ");
             istance = new SocketInitializer();
+        }
         String result = null;
         try {
             result = inMessage.readLine();
@@ -65,13 +69,13 @@ public class SocketInitializer {
     }
 
     public void closeSocket() {
-        try {
-            outMessage.close();
-            inMessage.close();
-            socket.close();
+      /*  try {
+           // outMessage.close();
+           // inMessage.close();
+           // socket.close();
         } catch (IOException e) {
             Log.e("SocketInitializer -> closeSocket -> ", "Errore chiusura socket: " + e.getMessage() );
-        }
+        }*/
     }
 
 }
