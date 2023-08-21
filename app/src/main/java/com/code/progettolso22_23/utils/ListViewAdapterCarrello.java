@@ -21,6 +21,7 @@ public class ListViewAdapterCarrello extends BaseAdapter {
         this.context = context;
         this.nomi = nomi;
         this.costi = costi;
+        this.quantita = quantita;
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

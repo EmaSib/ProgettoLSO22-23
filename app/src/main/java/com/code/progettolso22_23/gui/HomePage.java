@@ -44,7 +44,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
-        mainController.setUser(getIntent().getStringExtra("USERNAME"));
+        if(getIntent().getStringExtra("USERNAME") != null)
+            mainController.setUser(getIntent().getStringExtra("USERNAME"));
 
         //toolbar = findViewById(R.id.toolbar_homepage);
         //setSupportActionBar(toolbar);
@@ -86,6 +87,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     protected void onStart() {

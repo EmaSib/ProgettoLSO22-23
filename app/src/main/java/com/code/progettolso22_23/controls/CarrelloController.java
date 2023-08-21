@@ -1,5 +1,7 @@
 package com.code.progettolso22_23.controls;
 
+import android.util.Log;
+
 import com.code.progettolso22_23.entities.Bevanda;
 import com.code.progettolso22_23.entities.Carrello;
 import com.code.progettolso22_23.entities.ElementoCarrello;

@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
@@ -149,11 +150,11 @@ public class MainController {
             @Override
             public int compare(Bevanda bevanda, Bevanda t1) {
                 if(bevanda.getNumeroVendite() > t1.getNumeroVendite())
-                    return 1;
+                    return -1;
                 else if(bevanda.getNumeroVendite() == t1.getNumeroVendite())
                     return 0;
                 else
-                    return -1;
+                    return 1;
             }
         });
         int i=0;
@@ -212,7 +213,7 @@ public class MainController {
     }
 
     public float getSaldoByUsername() {
-
+         Log.d("MainController -> getSaldoByUsername -> ", User);
         return daoController.getSaldoByUsername(User);
 
     }

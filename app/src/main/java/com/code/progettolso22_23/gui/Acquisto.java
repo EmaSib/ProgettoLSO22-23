@@ -60,10 +60,14 @@ public class Acquisto extends AppCompatActivity {
                 float totale = Float.valueOf((String) totaleTextView.getText());
                 if(totale < saldo){
 
-                    carrelloController.svuotaCarrello();
-                    if(mainController.updateSaldoDiUtente(saldo - totale) && carrelloController.updateVenditeBevandeAcquistate()) {
-                        Toast.makeText(this, "Operazione riuscita!", Toast.LENGTH_SHORT).show();
-                        this.finish();
+                    if(mainController.updateSaldoDiUtente(saldo - totale)) {
+                        if (carrelloController.updateVenditeBevandeAcquistate()) {
+                            carrelloController.svuotaCarrello();
+                            Toast.makeText(this, "Operazione riuscita!", Toast.LENGTH_SHORT).show();
+                            this.finish();
+                        }
+                        else
+                            Toast.makeText(this, "Impossibile completare l'operazione, errore con il server", Toast.LENGTH_SHORT).show();
                     }
                     else
                         Toast.makeText(this, "Impossibile completare l'operazione, errore con il server", Toast.LENGTH_SHORT).show();

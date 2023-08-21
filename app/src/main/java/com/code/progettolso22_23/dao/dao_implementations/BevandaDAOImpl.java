@@ -26,7 +26,7 @@ public class BevandaDAOImpl implements BevandaDAO {
         try {
             if(connection.request("getBevande]")) {
                 message = connection.receive();
-                if (message.equals("Failed"))
+                if (message.equals("Fallimento"))
                     return null;
             }
             else
@@ -102,14 +102,16 @@ public class BevandaDAOImpl implements BevandaDAO {
                     }
                     if (tmpAssemblata.getNome() == null) {
                         result.add(tmp);
-                        tmp = new Bevanda();
+                        //tmp = new Bevanda();
                     } else {
                         result.add(tmpAssemblata);
                         Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente1: " + tmpAssemblata.getIngredienti().get(0));
                         Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente2 " + tmpAssemblata.getIngredienti().get(1));
                         Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente3 " + tmpAssemblata.getIngredienti().get(2));
-                        tmpAssemblata = new Assemblata();
+                        //tmpAssemblata = new Assemblata();
                     }
+                    tmp = new Bevanda();
+                    tmpAssemblata = new Assemblata();
                     k = i + 1;
                     num = 1;
                 }
@@ -129,7 +131,7 @@ public class BevandaDAOImpl implements BevandaDAO {
         try {
             if(connection.request("updatevenditabevanda\n"+String.valueOf(numero)+"@"+nome+"]"))
                 result = connection.receive();
-            if(!result.equals("Failed"))
+            if(!result.equals("Fallimento"))
                 return true;
             else
                 return false;
