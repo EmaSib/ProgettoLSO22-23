@@ -66,9 +66,8 @@ public class Registrazione extends AppCompatActivity {
             case R.id.registratiButton:
                 boolean successful = insertCheckCredentials();
                 if (successful) {
-                    //TODO
-                    //effettua registrazione verso server
-                    //intent a HomePage o Login
+                    Intent apriPaginaLogin = new Intent(this, Login.class);
+                    startActivity(apriPaginaLogin);
                     this.finish();
                 }
                 break;

@@ -35,7 +35,7 @@ public class UtenteDAOImpl implements UtenteDAO {
     public boolean effettuaSignUp(String username, String password, String nome, String cognome) {
         String result = null;
         try {
-            if(connection.request("signup\n"+username+"@"+password+"@"+nome+"@"+cognome+"]"))
+            if(connection.request("signup\n"+nome+"@"+cognome+"@"+username+"@"+password+"]"))
                 result = connection.receive();
             if(!result.equals("Fallimento"))
                 return true;

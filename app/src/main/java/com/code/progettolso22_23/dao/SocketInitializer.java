@@ -36,7 +36,7 @@ public class SocketInitializer {
     }
 
     public boolean request(String message) throws Exception {
-        if(socket.isClosed() || !socket.isConnected()){
+        if(socket.isClosed()){
             Log.e("SocketInitializer -> request -> ", "SONO QUI1 " );
             reconnect();
         }
