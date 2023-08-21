@@ -67,7 +67,7 @@ public class DAOController {
 
     public void closeConnection() {
         try {
-            connection.request("logout");
+            connection.request("logout]");
         } catch (Exception e) {
             Log.e("DAOController -> closeConnection -> ", "Errore: " + e.getMessage() );
         }

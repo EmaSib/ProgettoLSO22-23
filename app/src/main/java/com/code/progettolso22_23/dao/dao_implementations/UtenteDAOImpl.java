@@ -37,7 +37,7 @@ public class UtenteDAOImpl implements UtenteDAO {
         try {
             if(connection.request("signup\n"+username+"@"+password+"@"+nome+"@"+cognome+"]"))
                 result = connection.receive();
-            if(!result.equals("Failed"))
+            if(!result.equals("Fallimento"))
                 return true;
             else
                 return false;
@@ -54,7 +54,7 @@ public class UtenteDAOImpl implements UtenteDAO {
         try {
             if(connection.request("getsaldo\n"+username+"]")) {
                 query = connection.receive();
-                if(query.equals("Failed"))
+                if(query.equals("Fallimento"))
                     return -1;
                 result = Float.valueOf(query);
             }
@@ -71,7 +71,7 @@ public class UtenteDAOImpl implements UtenteDAO {
         try {
             if(connection.request("updatesaldo\n"+String.valueOf(saldo)+"@"+username+"]"))
                 result = connection.receive();
-            if(!result.equals("Failed"))
+            if(!result.equals("Fallimento"))
                 return true;
             else
                 return false;
