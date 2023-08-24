@@ -37,6 +37,7 @@ public class BevandaDAOImpl implements BevandaDAO {
                 bevandeString[i] = message.charAt(i);
             }
             bevandeString[bevandeString.length - 1] = '\n';
+            Log.d("BevandaDAOImpl -> getAllBevande -> ", "lunghezza: " + message.length());
             int i = 0;
             int k = 0;
             int j = 0;
@@ -105,9 +106,9 @@ public class BevandaDAOImpl implements BevandaDAO {
                         //tmp = new Bevanda();
                     } else {
                         result.add(tmpAssemblata);
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente1: " + tmpAssemblata.getIngredienti().get(0));
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente2 " + tmpAssemblata.getIngredienti().get(1));
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente3 " + tmpAssemblata.getIngredienti().get(2));
+                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente1: " + tmpAssemblata.getIngredienti().get(0));
+                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente2 " + tmpAssemblata.getIngredienti().get(1));
+                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente3 " + tmpAssemblata.getIngredienti().get(2));
                         //tmpAssemblata = new Assemblata();
                     }
                     tmp = new Bevanda();

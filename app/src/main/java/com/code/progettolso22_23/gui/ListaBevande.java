@@ -47,8 +47,10 @@ public class ListaBevande extends AppCompatActivity {
         tornaIndietro = (Button) findViewById(R.id.torna_indietro_button_lista_bevande);
         tornaIndietro.setOnClickListener(this::onClick);
         textView = (TextView) findViewById(R.id.text_view_lista_bevande);
-        if(BevandeDaMostrare.equals("Ricerca"))
+        if(BevandeDaMostrare.equals("Ricerca")) {
             textView.setText("Bevande trovate con gli ingredienti selezionati:");
+            mainController.setIngredienti(new ArrayList<>());
+        }
         else
             textView.setText(BevandeDaMostrare);
 

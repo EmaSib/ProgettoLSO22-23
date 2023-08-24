@@ -15,7 +15,7 @@ public class SocketInitializer {
     private Socket socket;
     private PrintStream outMessage;
     private BufferedReader inMessage;
-    private String IPAddress="192.168.1.11";
+    private String IPAddress="ec2-18-193-38-228.eu-central-1.compute.amazonaws.com";
     private int PortNumber=5200;
 
     private SocketInitializer() {
