@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SocketInitializer {
 
@@ -59,10 +62,13 @@ public class SocketInitializer {
         }
         String result = null;
         try {
+            socket.setSoTimeout(5 * 1000);
             result = inMessage.readLine();
         } catch (Exception e) {
             Log.e("SocketInitializer -> receive -> ", "Errore ricezione messaggio: " + e.getMessage() );
             e.printStackTrace();
+            if(e.getClass().equals(SocketTimeoutException.class))
+                socket.close();
             throw new Exception();
         }
         return result;

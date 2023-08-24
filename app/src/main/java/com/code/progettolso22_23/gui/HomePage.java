@@ -80,7 +80,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }
         mainController.inizializzaAllBevande();
         if(mainController.getAllBevande().size()==0) {
-            Toast.makeText(this, "Non sono state trovate bevande!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Non sono state trovate bevande!. Riavvia l'applicativo", Toast.LENGTH_SHORT).show();
         }
         Intent i = getIntent();
         mainController.setUser(i.getStringExtra("USERNAME"));

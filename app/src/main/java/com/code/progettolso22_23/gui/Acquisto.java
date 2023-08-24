@@ -58,6 +58,10 @@ public class Acquisto extends AppCompatActivity {
             case R.id.confermabutton:
                 float saldo = Float.valueOf((String) saldoTextView.getText());
                 float totale = Float.valueOf((String) totaleTextView.getText());
+                if(saldo == -1) {
+                    Toast.makeText(this, "Impossibile completare l'operazione, errore con il server. Riavvia l'applicativo", Toast.LENGTH_SHORT).show();
+                    break;
+                }
                 if(totale < saldo){
 
                     if(mainController.updateSaldoDiUtente(saldo - totale)) {
@@ -67,10 +71,10 @@ public class Acquisto extends AppCompatActivity {
                             this.finish();
                         }
                         else
-                            Toast.makeText(this, "Impossibile completare l'operazione, errore con il server", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Impossibile completare l'operazione, errore con il server. Riavvia l'applicativo", Toast.LENGTH_SHORT).show();
                     }
                     else
-                        Toast.makeText(this, "Impossibile completare l'operazione, errore con il server", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Impossibile completare l'operazione, errore con il server. Riavvia l'applicativo", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Saldo non sufficiente.", Toast.LENGTH_SHORT).show();
                 }

@@ -95,7 +95,7 @@ public class Registrazione extends AppCompatActivity {
             }
             else {
                 SignUpFallito.setTitle("Registrazione non Riuscita!");
-                SignUpFallito.setMessage("Qualcosa è andato storto!\nRiprova...");
+                SignUpFallito.setMessage("Qualcosa è andato storto!\nRiavvia l'applicativo e riprova");
                 SignUpFallito.setCancelable(true);
                 SignUpFallito.show();
                 UsernameField.setText("");

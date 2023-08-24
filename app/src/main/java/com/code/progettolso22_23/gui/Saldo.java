@@ -38,7 +38,7 @@ public class Saldo extends AppCompatActivity {
 
         saldo = mainController.getSaldoByUsername();
         if(saldo == -1)
-            Toast.makeText(this, "Impossibile visualizzare saldo, errore con il server!\nRiprova tra qualche momento...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Impossibile visualizzare saldo, errore con il server!\nRiavvia l'applicativo e riprova tra qualche momento...", Toast.LENGTH_SHORT).show();
         saldoTextView.setText(String.valueOf(saldo));
 
     }
@@ -60,7 +60,7 @@ public class Saldo extends AppCompatActivity {
                         saldoTextView.setText(String.valueOf(saldo));
                     }
                     else
-                        Toast.makeText(this, "Impossibile ricaricare il saldo.\n Riprova tra qualche momento...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Impossibile ricaricare il saldo.\n Riavvia l'applicativo e riprova", Toast.LENGTH_SHORT).show();
                 }
                 daRicaricare.setText("");
                 break;

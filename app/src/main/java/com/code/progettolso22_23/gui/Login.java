@@ -111,7 +111,7 @@ public class Login extends AppCompatActivity {
             }
             else {
                 LoginFallito.setTitle("Login non Riuscito!");
-                LoginFallito.setMessage("Il server non risponde!\nRiprova tra qualche momento...");
+                LoginFallito.setMessage("Il server non risponde!\nRiavvia l'applicativo e riprova tra qualche momento...");
                 LoginFallito.setCancelable(true);
                 LoginFallito.show();
                 UsernameField.setText("");
