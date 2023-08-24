@@ -23,4 +23,10 @@ public class LogController {
         return daoController.effettuaSignUp(Username, Password, Nome, Cognome);
     }
 
+    public void closeConnection(){
+
+        daoController.closeConnection();
+
+    }
+
 }

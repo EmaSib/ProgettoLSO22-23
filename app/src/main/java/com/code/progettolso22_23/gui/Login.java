@@ -100,6 +100,15 @@ public class Login extends AppCompatActivity {
                 UsernameField.setText("");
                 PasswordField.setText("");
             }
+            else if(successful==2){
+                LoginFallito.setTitle("Login non Riuscito!");
+                LoginFallito.setMessage("Il server non accetta nuove connessioni!\nRiprova tra qualche momento...");
+                LoginFallito.setCancelable(true);
+                LoginFallito.show();
+                UsernameField.setText("");
+                PasswordField.setText("");
+                logController.closeConnection();
+            }
             else {
                 LoginFallito.setTitle("Login non Riuscito!");
                 LoginFallito.setMessage("Il server non risponde!\nRiprova tra qualche momento...");
