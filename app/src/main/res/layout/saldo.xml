@@ -52,7 +52,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="0"
         android:text="DA RICARICARE"
         android:textSize="25dp" />
 
