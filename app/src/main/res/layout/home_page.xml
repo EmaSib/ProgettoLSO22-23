@@ -27,26 +27,89 @@
         android:background="@drawable/gradient_background"
         >
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="411dp"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toTopOf="@+id/ricerca_ingredientiButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/get_drink_logos_transparent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="41dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="201dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="347dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/drink_analcoliciButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:srcCompat="@drawable/_2_120773_arrow_icon_in_flat_style_arrow_vector_arrows" />
+
         <Button
             android:id="@+id/ricerca_ingredientiButton"
             android:layout_width="150dp"
             android:layout_height="57dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="430dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="22dp"
             android:text="RICERCA PER INGREDIENTI"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/frullatiButton"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <Button
+            android:id="@+id/frullatiButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="22dp"
+            android:text="FRULLATI E COCKTAIL"
+            app:layout_constraintBottom_toTopOf="@+id/drink_analcoliciButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ricerca_ingredientiButton"
+            tools:ignore="DuplicateClickableBoundsCheck" />
+
+        <Button
+            android:id="@+id/drink_analcoliciButton"
+            android:layout_width="150dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="22dp"
+            android:text="DRINK ANALCOLICI"
+            app:layout_constraintBottom_toTopOf="@+id/drinkButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frullatiButton" />
+
+        <Button
+            android:id="@+id/drinkButton"
+            android:layout_width="150dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="131dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="18dp"
+            android:text="DRINK"
+            app:layout_constraintBottom_toTopOf="@+id/caffetteriaButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drink_analcoliciButton" />
 
         <Button
             android:id="@+id/caffetteriaButton"
             android:layout_width="150dp"
             android:layout_height="57dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="131dp"
+            android:layout_marginStart="131dp"
+            android:layout_marginEnd="130dp"
             android:text="CAFFETTERIA"
+            app:layout_constraintBottom_toTopOf="@+id/genericheButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/drinkButton" />
@@ -55,67 +118,16 @@
             android:id="@+id/genericheButton"
             android:layout_width="150dp"
             android:layout_height="57dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="131dp"
+            android:layout_marginStart="131dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="110dp"
             android:text="GENERICHE"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/caffetteriaButton" />
-
-        <Button
-            android:id="@+id/drinkButton"
-            android:layout_width="150dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="410dp"
-            android:layout_marginTop="10dp"
-            android:text="DRINK"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drink_analcoliciButton" />
-
-        <Button
-            android:id="@+id/drink_analcoliciButton"
-            android:layout_width="150dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="410dp"
-            android:layout_marginTop="10dp"
-            android:text="DRINK ANALCOLICI"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frullatiButton" />
-
-        <Button
-            android:id="@+id/frullatiButton"
-            android:layout_width="150dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="410dp"
-            android:layout_marginTop="10dp"
-            android:text="FRULLATI E COCKTAIL"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ricerca_ingredientiButton"
-            tools:ignore="DuplicateClickableBoundsCheck" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="236dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/get_drink_logos_transparent" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="41dp"
-            android:layout_height="38dp"
-            android:layout_marginBottom="412dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/frullatiButton"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/_2_120773_arrow_icon_in_flat_style_arrow_vector_arrows" />
+            app:layout_constraintTop_toBottomOf="@+id/caffetteriaButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

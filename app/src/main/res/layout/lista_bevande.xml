@@ -23,29 +23,28 @@
 
         <ListView
             android:id="@+id/list_view_lista_bevande"
-            android:layout_weight="10"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            />
+            android:layout_height="181dp"
+            android:layout_weight="10" />
 
         <TextView
             android:id="@+id/text_view_consigliati_lista_bevande"
-            android:layout_weight="5"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="5"
             android:text="Bevande consigliate in base alle vendite:" />
 
         <ListView
             android:id="@+id/list_view_consigliati_lista_bevande"
-            android:layout_weight="10"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="182dp"
+            android:layout_weight="10" />
 
         <Button
             android:id="@+id/torna_indietro_button_lista_bevande"
-            android:layout_weight="10"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="57dp"
+            android:layout_weight="10"
             android:text="TORNA INDIETRO" />
 
     </LinearLayout>

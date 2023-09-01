@@ -3,34 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/acquisto.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/carrello.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/list_view_row_carrello.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/main_activity.xml" value="0.2695035460992908" />
-        <entry key="..\:/Users/emanu/AndroidStudioProjects/ProgettoLSO2223/app/src/main/res/layout/saldo.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/drawable/gradient_background.xml" value="0.2185" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/drawable/logodrink.xml" value="0.1885" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/acquisto.xml" value="0.264" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/app_toolbar_homepage.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/bevanda_informazioni.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/carrello.xml" value="0.25" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/drawer_header_homepage.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/home_page.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/home_page.xml" value="0.25" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_bevanda_assemblata.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_bevanda_normale.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_carrello.xml" value="0.25" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/list_view_row_generica.xml" value="0.19791666666666666" />
-        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/lista_bevande.xml" value="0.19791666666666666" />
-        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/login.xml" value="0.1" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/lista_bevande.xml" value="0.264" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/main_activity.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/modifica_carrello_dialog.xml" value="0.25" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/pagina_bevanda.xml" value="0.264" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/registrazione.xml" value="0.264" />
         <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/ricerca_dialog.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/saldo.xml" value="0.2" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/ProgettoLSO22-23/app/src/main/res/layout/saldo.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

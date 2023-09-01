@@ -39,8 +39,7 @@
         <ListView
             android:id="@+id/list_view_lista_carrello"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="394dp" />
 
         <Button
             android:id="@+id/acquistabutton"

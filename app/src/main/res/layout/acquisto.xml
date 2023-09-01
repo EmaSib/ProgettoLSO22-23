@@ -25,10 +25,9 @@
 
         <ListView
             android:id="@+id/list_view_lista_acquisto"
-            android:layout_weight="10"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            />
+            android:layout_height="382dp"
+            android:layout_weight="10" />
 
         <TextView
             android:id="@+id/textViewTOTALE"
