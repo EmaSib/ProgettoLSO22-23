@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="411dp"
-            android:layout_height="160dp"
+            android:layout_width="418dp"
+            android:layout_height="183dp"
             app:layout_constraintBottom_toTopOf="@+id/ricerca_ingredientiButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

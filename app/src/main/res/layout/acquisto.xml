@@ -32,31 +32,35 @@
         <TextView
             android:id="@+id/textViewTOTALE"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:text="TOTALE"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textViewImporto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="33dp"
+            android:textSize="16dp"
             android:text="" />
 
         <TextView
             android:id="@+id/textViewSALDO"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="SALDO"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textViewSaldoDisponibile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_height="29dp"
             android:text="" />
 
         <Button
