@@ -2,19 +2,13 @@ package com.code.progettolso22_23.controls;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
-import android.os.Build;
-import android.util.Log;
-
-import androidx.annotation.RequiresApi;
 
 import com.code.progettolso22_23.entities.Assemblata;
 import com.code.progettolso22_23.entities.Bevanda;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 public class MainController {
@@ -74,39 +68,6 @@ public class MainController {
         }
     }
 
-        /*int result = 0; // Ritorna i tipi di connessione. 0: nessuna; 1: rete dati; 2: wifi; 3: vpn
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (cm != null) {
-                NetworkCapabilities capabilities = cm.getNetworkCapabilities(cm.getActiveNetwork());
-                if (capabilities != null) {
-                    if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                        result = 2;
-                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                        result = 1;
-                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)) {
-                        result = 3;
-                    }
-                }
-            }
-        } else {
-            if (cm != null) {
-                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                if (activeNetwork != null) {
-                    // connesso a internet
-                    if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-                        result = 2;
-                    } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                        result = 1;
-                    } else if (activeNetwork.getType() == ConnectivityManager.TYPE_VPN) {
-                        result = 3;
-                    }
-                }
-            }
-        }
-        return result;
-    }*/
-
     public void inizializzaAllBevande() {
         if(AllBevande.size() == 0)
             this.setAllBevande(daoController.ottieniTutteLeBevande());
@@ -131,8 +92,6 @@ public class MainController {
             }
         }
         return result;
-
-
     }
 
     public Bevanda trovaBevandaByNome(String nome) {
@@ -213,8 +172,9 @@ public class MainController {
     }
 
     public float getSaldoByUsername() {
-         Log.d("MainController -> getSaldoByUsername -> ", User);
+
         return daoController.getSaldoByUsername(User);
+
 
     }
 
@@ -225,7 +185,9 @@ public class MainController {
     }
 
     public void closeConnection() {
+
         daoController.closeConnection();
+
     }
 
 

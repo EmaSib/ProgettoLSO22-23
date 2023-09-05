@@ -47,9 +47,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         if(getIntent().getStringExtra("USERNAME") != null)
             mainController.setUser(getIntent().getStringExtra("USERNAME"));
 
-        //toolbar = findViewById(R.id.toolbar_homepage);
-        //setSupportActionBar(toolbar);
-
         drawerLayout = findViewById(R.id.drawer);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer );
         drawerLayout.addDrawerListener(drawerToggle);
@@ -163,15 +160,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         ricercaDialog.setView(ricercaDialogLayout);
         ricercaDialog.setTitle("Seleziona ingredienti da ricercare");
         CheckBox campari = (CheckBox) ricercaDialogLayout.findViewById(R.id.campariCheckBox);
-        //campari.setChecked(false);
         CheckBox martini = (CheckBox) ricercaDialogLayout.findViewById(R.id.martiniCheckBox);
-        //martini.setChecked(false);
         CheckBox mango = (CheckBox) ricercaDialogLayout.findViewById(R.id.mangoCheckBox);
-        //mango.setChecked(false);
         CheckBox menta = (CheckBox) ricercaDialogLayout.findViewById(R.id.mentaCheckBox);
-        //menta.setChecked(false);
         CheckBox bitter = (CheckBox) ricercaDialogLayout.findViewById(R.id.bitterCheckBox);
-        //bitter.setChecked(false);
 
         ricercaDialog.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
             @Override

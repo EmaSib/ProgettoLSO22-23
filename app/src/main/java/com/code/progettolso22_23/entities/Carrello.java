@@ -1,6 +1,5 @@
 package com.code.progettolso22_23.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Carrello {

@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.code.progettolso22_23.R;
-import com.code.progettolso22_23.gui.HomePage;
 import com.code.progettolso22_23.gui.Login;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        //intent alla nuova pagina di benvenuto
         Intent apriPrimaPagina = new Intent(this, Login.class);
         startActivity(apriPrimaPagina);
         this.finish();

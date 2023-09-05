@@ -2,15 +2,12 @@ package com.code.progettolso22_23.dao;
 
 import android.util.Log;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SocketInitializer {
 
@@ -40,7 +37,6 @@ public class SocketInitializer {
 
     public boolean request(String message) throws Exception {
         if(socket.isClosed()){
-            Log.e("SocketInitializer -> request -> ", "SONO QUI1 " );
             reconnect();
         }
         boolean result;
@@ -57,7 +53,6 @@ public class SocketInitializer {
 
     public String receive() throws Exception {
         if(socket.isClosed()){
-            Log.d("SocketInitializer -> receive -> ", "SONO QUI2 ");
             reconnect();
         }
         String result = null;
@@ -76,8 +71,6 @@ public class SocketInitializer {
 
     public void closeSocket() {
       try {
-            //outMessage.close();
-            //inMessage.close();
             socket.close();
         } catch (IOException e) {
             Log.e("SocketInitializer -> closeSocket -> ", "Errore chiusura socket: " + e.getMessage() );

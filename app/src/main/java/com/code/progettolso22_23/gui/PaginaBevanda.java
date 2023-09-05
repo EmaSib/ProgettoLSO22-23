@@ -1,12 +1,10 @@
 package com.code.progettolso22_23.gui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,8 +82,6 @@ public class PaginaBevanda extends AppCompatActivity {
                 Toast.makeText(this, "Elemento aggiunto al carrello con successo!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.torna_indietro_button_pagina_bevanda:
-                //Intent apriListaBevande = new Intent(this, ListaBevande.class);
-                //startActivity(apriListaBevande);
                 this.finish();
                 break;
         }
@@ -94,7 +90,6 @@ public class PaginaBevanda extends AppCompatActivity {
     public void updateListView() {
 
         ListaIngredienti.setAdapter(new ListViewAdapterGenerico(this, getArrayDaListaIngredienti()));
-
 
     }
 

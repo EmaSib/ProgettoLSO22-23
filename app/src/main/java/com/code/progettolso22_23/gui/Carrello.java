@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.NumberPicker;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -19,9 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.code.progettolso22_23.R;
 import com.code.progettolso22_23.controls.CarrelloController;
 import com.code.progettolso22_23.controls.MainController;
-import com.code.progettolso22_23.entities.Assemblata;
-import com.code.progettolso22_23.utils.ListViewAdapterBevandaAssemblata;
-import com.code.progettolso22_23.utils.ListViewAdapterBevandaNormale;
 import com.code.progettolso22_23.utils.ListViewAdapterCarrello;
 
 public class Carrello extends AppCompatActivity {
@@ -82,8 +77,6 @@ public class Carrello extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.backButton2:
-                //Intent ritornaPaginaHomePage = new Intent(this, HomePage.class);
-                //startActivity(ritornaPaginaHomePage);
                 this.finish();
                 break;
         }
@@ -104,7 +97,6 @@ public class Carrello extends AppCompatActivity {
         });
         picker.setMinValue(0);
         picker.setMaxValue(100);
-        //  picker.setValue(5);
 
         modificaDialog.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
             @Override
@@ -120,8 +112,6 @@ public class Carrello extends AppCompatActivity {
                 updateListView();
                 dialogInterface.dismiss();
             }
-            //TODO
-            //modifica della quantità dell'item nel carrello
         });
 
 

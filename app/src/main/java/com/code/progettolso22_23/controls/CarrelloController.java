@@ -1,13 +1,10 @@
 package com.code.progettolso22_23.controls;
 
-import android.util.Log;
-
 import com.code.progettolso22_23.entities.Bevanda;
 import com.code.progettolso22_23.entities.Carrello;
 import com.code.progettolso22_23.entities.ElementoCarrello;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CarrelloController {
 
@@ -41,13 +38,6 @@ public class CarrelloController {
     }
 
     public void aggiornaQuantitaBevandaCarrello(String nome, int quantita) {
-        /*for (ElementoCarrello e : carrello.getLista()) {
-            if(e.getBevanda().getNome().equals(nome)) {
-                e.setQuantita(e.getQuantita() - quantita);
-                if(e.getQuantita() <= 0)
-                    carrello.getLista().remove(e);
-            }
-        }*/
         for (ElementoCarrello e : carrello.getLista()) {
             if (e.getBevanda().getNome().equals(nome)) {
                 if (quantita == 0)

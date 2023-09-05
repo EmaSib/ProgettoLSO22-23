@@ -32,48 +32,39 @@ public class BevandaDAOImpl implements BevandaDAO {
             else
                 return null;
             char[] bevandeString = new char[message.length() + 1];
-            //bevandeString = message.toCharArray();
             for(int i=0; i<message.length(); i++){
                 bevandeString[i] = message.charAt(i);
             }
             bevandeString[bevandeString.length - 1] = '\n';
-            Log.d("BevandaDAOImpl -> getAllBevande -> ", "lunghezza: " + message.length());
             int i = 0;
             int k = 0;
             int j = 0;
             int num = 1;
-            Log.d("BevandaDAOImpl -> getAllBevande -> ", "messaggio: " + message);
-            Log.d("BevandaDAOImpl -> getAllBevande -> ", "stringa bevande: " + bevandeString.toString());
             for(i = 0; i < bevandeString.length; i++) {
                 if(bevandeString[i] == '@' && tmp.getNome() == null && num == 1) {
                     tmp.setNome(message.substring(k, i));
-                    Log.d("BevandaDAOImpl -> getAllBevande -> ", "nome: " + message.substring(k, i));
                     k = i + 1;
                     num++;
                 }
                 else if(bevandeString[i] == '@' && tmp.getTipo() == null && num == 2) {
                     tmp.setTipo(message.substring(k, i));
-                    Log.d("BevandaDAOImpl -> getAllBevande -> ", "tipo: " + message.substring(k, i));
                     k = i + 1;
                     num++;
                 }
                 else if(bevandeString[i] == '@' && tmp.getFoto() == null && num == 3) {
                     if(!(k == i)) {
                         tmp.setFoto(StringToBitMap(message.substring(k, i)));
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "foto: " + message.substring(k, i));
                     }
                     k = i + 1;
                     num++;
                 }
                 else if(bevandeString[i] == '@' && tmp.getNumeroVendite()==-1 && num == 4) {
                     tmp.setNumeroVendite(Integer.valueOf(message.substring(k, i)));
-                    Log.d("BevandaDAOImpl -> getAllBevande -> ", "nunmero vendite: " + message.substring(k, i));
                     k = i + 1;
                     num++;
                 }
                 else if(bevandeString[i] == '@' && tmp.getCosto()==-1 && num == 5) {
                     tmp.setCosto(Float.valueOf(message.substring(k, i)));
-                    Log.d("BevandaDAOImpl -> getAllBevande -> ", "costo: " + message.substring(k, i));
                     k = i + 1;
                     num++;
                 }
@@ -81,35 +72,26 @@ public class BevandaDAOImpl implements BevandaDAO {
                     if(!(k == i)) {
                         convertBevandaToAssemblata(tmpAssemblata, tmp);
                         tmpAssemblata.setDescrizione(message.substring(k, i));
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "descrizione: " + message.substring(k, i));
                     }
                     k = i + 1;
                     num++;
                 }
                 else if((bevandeString[i] == '-' || bevandeString[i] == '\n') && num == 7) {
-                    Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingredienti prima di k: " );
                     if (!(k == i)) {
-                        Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingredienti dopo di k: " );
                         convertBevandaToAssemblata(tmpAssemblata, tmp);
                         tmpAssemblata.setIngredienti(new ArrayList<>());
                         for (j = k; j < i; j++) {
                             if (bevandeString[j] == ';') {
                                 String s = message.substring(k, j);
                                 tmpAssemblata.getIngredienti().add(s);
-                                Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingredienti: " + message.substring(k, j));
                                 k = j + 1;
                             }
                         }
                     }
                     if (tmpAssemblata.getNome() == null) {
                         result.add(tmp);
-                        //tmp = new Bevanda();
                     } else {
                         result.add(tmpAssemblata);
-                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente1: " + tmpAssemblata.getIngredienti().get(0));
-                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente2 " + tmpAssemblata.getIngredienti().get(1));
-                        //Log.d("BevandaDAOImpl -> getAllBevande -> ", "ingrediente3 " + tmpAssemblata.getIngredienti().get(2));
-                        //tmpAssemblata = new Assemblata();
                     }
                     tmp = new Bevanda();
                     tmpAssemblata = new Assemblata();
@@ -138,6 +120,7 @@ public class BevandaDAOImpl implements BevandaDAO {
                 return false;
         } catch (Exception e) {
             Log.e("BevandaDAOImpl -> updateVenditeBevanda -> ", "Errore: " + e.getMessage() );
+            e.printStackTrace();
             return false;
         }
     }
@@ -148,8 +131,9 @@ public class BevandaDAOImpl implements BevandaDAO {
             Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
             return bitmap;
         } catch(Exception e) {
-            Log.d("BevandaDAOImpl -> StringToBitMap", "Fallimento");
-            Log.d("BevandaDAOImpl -> StringToBitMap", e.getMessage());
+            Log.e("BevandaDAOImpl -> StringToBitMap", "Fallimento");
+            Log.e("BevandaDAOImpl -> StringToBitMap", e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }

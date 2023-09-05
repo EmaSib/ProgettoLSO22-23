@@ -19,7 +19,6 @@ public class UtenteDAOImpl implements UtenteDAO {
         try {
             if(connection.request("login\n"+username+"@"+password+']'))
                 result = connection.receive();
-            Log.d("UtenteDAOImpl -> checkLogin -> ", result);
             if(result.equals("Fallimento"))
                 return 0;
             else if(result.equals(("Error")))

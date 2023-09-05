@@ -20,23 +20,15 @@ public class Registrazione extends AppCompatActivity {
     private LogController logController = LogController.getInstance();
 
     private String Username;
-
     private String Password;
-
     private String Nome;
-
     private String Cognome;
 
     private Button registrati;
-
     private ImageButton backButton;
-
     private EditText UsernameField;
-
     private EditText PasswordField;
-
     private EditText NomeField;
-
     private EditText CognomeField;
 
     private AlertDialog.Builder SignUpFallito;

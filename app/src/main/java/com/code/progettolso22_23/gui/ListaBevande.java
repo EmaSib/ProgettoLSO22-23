@@ -84,8 +84,6 @@ public class ListaBevande extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.torna_indietro_button_lista_bevande:
-                //Intent apriPaginaHomePage = new Intent(this, HomePage.class);
-                //startActivity(apriPaginaHomePage);
                 this.finish();
                 break;
         }

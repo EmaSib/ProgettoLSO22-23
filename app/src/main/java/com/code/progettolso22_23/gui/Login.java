@@ -19,17 +19,11 @@ public class Login extends AppCompatActivity {
     private LogController logController = LogController.getInstance();
 
     private String Username;
-
     private String Password;
-
     private Button accedi;
-
     private Button registrati;
-
     private EditText UsernameField;
-
     private EditText PasswordField;
-
     private AlertDialog.Builder LoginFallito;
 
     @Override
@@ -53,8 +47,6 @@ public class Login extends AppCompatActivity {
             case R.id.accediButton:
                 boolean succesLogIn = insertCheckCredentials();
                 if (succesLogIn) {
-                    //TODO
-                    //controllo presenza utente verso server
                     Intent apriPaginaHomepage = new Intent(this, HomePage.class);
                     apriPaginaHomepage.putExtra("USERNAME", Username);
                     startActivity(apriPaginaHomepage);
